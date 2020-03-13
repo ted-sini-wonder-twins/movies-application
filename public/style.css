@@ -2,14 +2,12 @@ html, body {
     height: 100%;
 }
 
-/*.container {*/
-/*    position: relative;*/
-/*    top: 50%;*/
-/*    transform: translateY(-100%);*/
-/*    text-align: center;*/
-/*}*/
+#jumbo-container{
+    height: 50vh;
+}
 
-/*.btn btn-primary {*/
-/*    border-radius: 25px;*/
-/*}*/
+a {
+    font-size: 1.5em;
+}
+
 
