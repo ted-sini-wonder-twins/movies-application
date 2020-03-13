@@ -2,6 +2,9 @@
  * es6 modules and imports
  */
 import sayHello from './hello';
+import 'boostrap'
+import $ from 'jquery'
+
 sayHello('World');
 
 /**
