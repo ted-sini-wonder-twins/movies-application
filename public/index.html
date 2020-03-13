@@ -9,70 +9,29 @@
 </head>
 <body>
 <!--    jumbotron begins here-->
-    <div class="jumbotron-fluid bg-secondary">
-        <div class="container">
+    <div class="jumbotron-fluid">
+        <div class="container" id="jumbo-container">
             <h1 class="display-4">Fluid jumbotron</h1>
-            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            <p class="lead m-0">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
         </div>
+    <!--    navbar begins here-->
+        <nav class="navbar navbar-light bg-dark">
+            <a class="navbar-brand">Navbar</a>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
     </div>
+
+
 <!--fluid boot container starts here-->
-<div class="container-fluid">
+<div class="container-fluid row" id="movie-area">
 
-<!--    navbar begins here-->
-    <nav class="navbar navbar-light bg-dark">
-        <a class="navbar-brand">Navbar</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </nav>
-
-<!--    card decks start here-->
-    <div class="card-deck">
-        <div class="card">
-<!--            <img src="..." class="card-img-top" alt="...">-->
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="badge badge-pill badge-primary">DELETE</a>
-                <a href="#" class="badge badge-pill badge-primary">EDIT</a>
-            </div>
-        </div>
-
-        <div class="card">
-<!--            <img src="..." class="card-img-top" alt="...">-->
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="badge badge-pill badge-primary">DELETE</a>
-                <a href="#" class="badge badge-pill badge-primary">EDIT</a>
-            </div>
-        </div>
-
-        <div class="card">
-<!--            <img src="..." class="card-img-top" alt="...">-->
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="badge badge-pill badge-primary">DELETE</a>
-                <a href="#" class="badge badge-pill badge-primary">EDIT</a>
-            </div>
-        </div>
-    </div>
-
-
-
-
-<!--    <h1>Hello There!</h1>>-->
-<!--    <p>To get started, edit <code>src/index.js</code>.</p>-->
 
 </div>
+
+
     <script src="main.js"></script>
 </body>
 </html>

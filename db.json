@@ -3,16 +3,33 @@
     {
       "title": "Casablanca",
       "rating": "4",
-      "genre": "Classic",
-      "description": "Here's looking at you kid",
+      "plot": "Classic",
       "id": 1
     },
     {
       "title": "Star Wars: A New Hope",
       "rating": "5",
-      "genre": "Drama",
-      "description": "Best movie",
+      "plot": "So it begins",
+      "id": 2
+    },
+    {
+      "title": "Star Wars: A New Hope",
+      "rating": "5",
+      "plot": "So it begins",
+      "id": 2
+    },
+    {
+      "title": "Star Wars: A New Hope",
+      "rating": "5",
+      "plot": "So it begins",
+      "id": 2
+    },
+    {
+      "title": "Star Wars: A New Hope",
+      "rating": "5",
+      "plot": "So it begins",
       "id": 2
     }
+
   ]
 }
