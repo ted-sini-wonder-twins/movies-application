@@ -1,4 +1,4 @@
-npm run dev// for resolving the absolute path to our project
+// npm run dev// for resolving the absolute path to our project
 // necessary for webpack
 const path = require('path');
 const webpack = require('webpack');
