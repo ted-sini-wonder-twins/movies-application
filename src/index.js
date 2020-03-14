@@ -16,25 +16,34 @@ const {getMovies, deleteMovie, editMovies, postMovies} = require('./api.js');
 
 // Function to create HTML
 function createCard(title, rating) {
+  // Variable for empty string
   var html = "";
-  html += "<div class=\" col-4 card p-0\">";
-    html += "<div class=\"card-body\">";
-      html += "<h5 class=\"card-title\">" + title + "</h5>";
-      html += "<p> Rating: " + rating + "</p>";
-    html += "</div>";
-    html += "<div class=\"card-footer d-flex justify-content-around\">";
-      html += "<a href=\"#\" class=\" badge-pill badge-primary\">DELETE</a>";
-      html += "<a href=\"#\" class=\" badge-pill badge-primary\">EDIT</a>";
-    html += "</div>";
-  html += "</div>";
+  // Push all elements of the card to the string
+  html += `
+  <div class=" col-4 card p-0">
+    <div class="card-body">
+      <h5 class="card-title">${title}</h5>
+      <p> Rating: ${rating}</p>
+    </div>
+    <div class="card-footer d-flex justify-content-around">
+      <a href="#" class=" badge-pill badge-primary">DELETE</a>
+      <a href="#" class=" badge-pill badge-primary">EDIT</a>
+    </div>
+  </div>`;
+  // Console log for debugging
   // console.log(html);
   return html;
 }
 
+// Runs movies and take the readable file
 getMovies().then((movies) => {
+  // Console log for debugging
   console.log('Here are all the movies:');
+  // Cycles thru each movie in the database
   movies.forEach(({title, rating, id}) => {
+    // Console log for debugging
     console.log(`id#${id} - ${title} - rating: ${rating}`);
+    // Added cards to div / creates cards using movie info
     $("#movie-area").append( createCard(title,rating) )
   });
 }).catch((error) => {
