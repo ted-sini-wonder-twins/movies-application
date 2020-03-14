@@ -7,10 +7,12 @@ import $ from 'jquery'
 
 sayHello('World');
 
+
 /**
  * require style imports
  */
-const {getMovies} = require('./api.js');
+const {getMovies, deleteMovie, editMovies, postMovies} = require('./api.js');
+
 
 // Function to create HTML
 function createCard(title, rating) {
@@ -39,3 +41,40 @@ getMovies().then((movies) => {
   alert('Oh no! Something went wrong.\nCheck the console for details.');
   console.log(error);
 });
+
+
+
+
+//start of js animation testing
+const headerimage = document.querySelector(".headerimage");
+const slider = document.querySelector(".slider");
+const logo = document.querySelector("#logo");
+const logo2 = document.querySelector("#logo2");
+const headline = document.querySelector(".headline");
+
+const tl = new TimelineMax();
+
+tl.fromTo(headerimage, 3, { height: "0%" }, { height: "90%", ease: Power1.easeInOut })
+    .fromTo(
+        headerimage,
+        1.2,
+        { width: "100%" },
+        { width: "80%", ease: Power1.easeInOut }
+    )
+
+    .fromTo(
+        slider,
+        1.2,
+        { x: "-100%" },
+        { x: "0%", ease: Power1.easeInOut },
+        "-=1.2"
+    )
+
+    .fromTo(logo, 0.9, { opacity: 0, x: 30 }, { opacity: 5, x: 0 }, "-=0.15")
+    .fromTo(logo2, 0.8, { opacity: 0, x: 30 }, { opacity: 5, x: 0 }, "-=0.15")
+    .fromTo(headline, 0.7, { opacity: 0, x: 30 }, { opacity: 5, x: 0 }, "-=0.15");
+//end of js animation header testing
+
+
+
+

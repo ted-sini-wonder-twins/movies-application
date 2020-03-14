@@ -3,15 +3,33 @@
 <head>
     <meta charset="UTF-8" />
     <title>My Application</title>
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Chivo:900i|Limelight&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+<!--html for header starts here-->
+<header>
+    <nav>
+        <h3 id="logo">Hello there!</h3>
+        <h2 id="logo2">Like movies?</h2>
+    </nav>
+    <section>
+        <div class="headerimage">
+            <img src="img/newhope.jpeg" class="sw" alt="star wars poster">
+            <h1 class="headline">SUPER MOVIE BROS</h1>
+        </div>
+    </section>
+</header>
+<!--html for header ends here-->
+
+<div class="slider"></div>
 <!--    jumbotron begins here-->
-    <div class="jumbotron-fluid">
+    <div class="jumbotron-fluid" id="jumbo-body">
         <div class="container" id="jumbo-container">
-            <h1 class="display-4">Fluid jumbotron</h1>
+            <h2 class="display-4">Fluid jumbotron</h2>
             <p class="lead m-0">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
         </div>
     <!--    navbar begins here-->
@@ -26,12 +44,13 @@
 
 
 <!--fluid boot container starts here-->
-<div class="container-fluid row" id="movie-area">
-
+<div class="container-fluid row p-0 m-0" id="movie-area">
 
 </div>
 
 
-    <script src="main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
+<script src="main.js"></script>
 </body>
 </html>
