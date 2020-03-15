@@ -10,7 +10,7 @@ html, body {
 }
 
 header {
-    height: 895px;
+    height: 100vh;
 }
 
 img {
@@ -28,7 +28,7 @@ img {
     z-index: -1;
 }
 
-nav{
+header > nav{
     display: grid;
     grid-template-columns: 10% 1fr 1fr 10%;
     min-height: 10vh;
@@ -49,7 +49,7 @@ nav{
     font-family: 'Limelight', cursive;
 }
 
-section{
+header > section{
     display: flex;
     height: 80vh;
     justify-content: center;
@@ -312,14 +312,6 @@ section{
 /*this is end of js animation header*/
 
 
-#jumbo-container{
-    height: 40vh;
-}
-
-#jumbo-body {
-    background-color: green;
-}
-
 /*this is where css for background gif/loading img is*/
 body {
     background-image: url("img/movieCountdown.gif");
@@ -346,7 +338,7 @@ body {
 }
 /*this is end of background gif/loading css*/
 
-/*this is where bounce animation for buttions starts*/
+/*this is where bounce animation for buttons starts*/
 a.badge-pill.badge-primary:hover {
     animation: bounce .85s ease-out;
 }
@@ -366,11 +358,15 @@ a.badge-pill.badge-primary:hover {
         transform: translateY(-5px); background-color: #1465d9;
     }
 }
-/*this is where bounce animation for buttions starts*/
 
+
+
+/*this is where bounce animation for buttons starts*/
 a {
     font-size: 1.5em;
 }
+
+
 
 /* Cards CSS */
 /* Height and width of the overall card */
