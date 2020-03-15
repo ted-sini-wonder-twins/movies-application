@@ -373,25 +373,42 @@ a {
 }
 
 /* Cards CSS */
+/* Height and width of the overall card */
 .card{
     width: 300px;
     height: 375px;
+    /* added the 3d illusion */
     perspective: 1000px;
 }
+
+/* Container to hold the "cards" and do the flip */
 .flip{
     transition: transform 0.8s;
     transform-style: preserve-3d;
 }
+
+/* On hover have the cards flip */
 .card:hover .flip{
     transform: rotateY(180deg);
 }
+
+/* Positions the front and back of the cards on top of each other */
 .front, .back{
     backface-visibility: hidden;
 }
+
+/* Place styling for front card in-case of no image */
+.front{
+    background-image: url("img/coming-soon.png");
+}
+
+/* Styling for back of card */
 .back{
     transform: rotateY(180deg);
     background-color: ghostwhite;
 }
+
+/* Styling class to enlarge the icons in the cards */
 .cLink {
     font-size: 1.5em;
 }
