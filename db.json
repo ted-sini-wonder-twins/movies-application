@@ -27,6 +27,34 @@
 
       "img": "img/rotjMoviePoster.jpg",
       "id": 4
+    },
+    {
+      "title": "The Shining",
+      "rating": "5",
+
+      "img": "img/firstShining.jpg",
+      "id": 5
+    },
+    {
+      "title": "Shawshank Redemption",
+      "rating": "5",
+
+      "img": "img/shawshank.jpg",
+      "id": 6
+    },
+    {
+      "title": "2001: A Space Odyssey",
+      "rating": "4",
+
+      "img": "img/odyssey.jpg",
+      "id": 7
+    },
+    {
+      "title": "Pulp Fiction",
+      "rating": "4",
+
+      "img": "img/pulp.jpg",
+      "id": 8
     }
 
   ]
