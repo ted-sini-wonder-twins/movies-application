@@ -67,7 +67,7 @@ getMovies().then((movies) => {
 const headerimage = document.querySelector(".headerimage");
 const slider = document.querySelector(".slider");
 const logo = document.querySelector("#logo");
-const logo2 = document.querySelector("#logo2");
+// const logo2 = document.querySelector("#logo2");
 const headline = document.querySelector(".headline");
 
 const tl = new TimelineMax();
@@ -89,7 +89,7 @@ tl.fromTo(headerimage, 3, { height: "0%" }, { height: "90%", ease: Power1.easeIn
     )
 
     .fromTo(logo, 0.9, { opacity: 0, x: 30 }, { opacity: 5, x: 0 }, "-=0.15")
-    .fromTo(logo2, 0.8, { opacity: 0, x: 30 }, { opacity: 5, x: 0 }, "-=0.15")
+    // .fromTo(logo2, 0.8, { opacity: 0, x: 30 }, { opacity: 5, x: 0 }, "-=0.15")
     .fromTo(headline, 0.7, { opacity: 0, x: 30 }, { opacity: 5, x: 0 }, "-=0.15");
 //end of js animation header testing
 
