@@ -3,38 +3,30 @@
     {
       "title": "Casablanca",
       "rating": "4",
-      "plot": "Classic",
+
+      "img": "img/casablancaposter.jpg",
       "id": 1
     },
     {
       "title": "Star Wars: A New Hope",
       "rating": "5",
-      "plot": "So it begins",
+
+      "img": "img/anhMoviePoster.jpg",
       "id": 2
     },
     {
       "title": "Star Wars: The Empire Strikes Back",
       "rating": "5",
-      "plot": "So it begins",
+
+      "img": "img/esbMoviePoster.jpg",
       "id": 3
     },
     {
       "title": "Star Wars: Return of the Jedi",
       "rating": "5",
-      "plot": "So it begins",
+
+      "img": "img/rotjMoviePoster.jpg",
       "id": 4
-    },
-    {
-      "title": "Star Wars: A New Hope",
-      "rating": "5",
-      "plot": "So it begins",
-      "id": 5
-    },
-    {
-      "title": "Star Wars: A New Hope",
-      "rating": "5",
-      "plot": "So it begins",
-      "id": 6
     }
 
   ]
