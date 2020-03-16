@@ -13,7 +13,7 @@ sayHello('World');
  * require style imports
  */
 const {getMovies, deleteMovie, editMovies, postMovies} = require('./api.js');
-$(document).ready( () => {
+// $(document).ready( () => {
 
 // Function to create HTML
   function createCard(title, rating, img, id) {
@@ -51,18 +51,15 @@ $(document).ready( () => {
 //   console.log(movieId);
 // });
 
-  $(document).on("click","#main-nav", () => {
-    console.log($(this));
-    console.log("clicked");
-  });
+
 // Runs movies and take the readable file
   getMovies().then((movies) => {
     // Console log for debugging
-    console.log('Here are all the movies:');
+    // console.log('Here are all the movies:');
     // Cycles thru each movie in the database
     movies.forEach(({title, rating, img, id}) => {
       // Console log for debugging
-      console.log(`id#${id} - ${title} - rating: ${rating} - img: ${img}`);
+      // console.log(`id#${id} - ${title} - rating: ${rating} - img: ${img}`);
       // Added cards to div / creates cards using movie info
       $("#movie-area").append(createCard(title, rating, img, id));
     });
@@ -154,4 +151,4 @@ $(document).ready( () => {
 // monitors when screen is scrolled
   window.addEventListener('scroll', fixNav);
 
-});
+// });
