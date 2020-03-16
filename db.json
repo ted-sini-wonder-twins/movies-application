@@ -47,6 +47,78 @@
       "rating": "4",
       "img": "img/pulp.jpg",
       "id": 8
+    },
+    {
+      "title": "28 Days Later",
+      "rating": "4",
+      "img": "img/28days.jpg",
+      "id": 9
+    },
+    {
+      "title": "Star Wars: The Phantom Menace",
+      "rating": "4",
+      "img": "img/phantom.jpg",
+      "id": 10
+    },
+    {
+      "title": "Star Wars: Attack of the Clones",
+      "rating": "4",
+      "img": "img/clones.jpg",
+      "id": 11
+    },
+    {
+      "title": "Star Wars: Revenge of the Sith",
+      "rating": "5",
+      "img": "img/revenge.jpg",
+      "id": 12
+    },
+    {
+      "title": "Snatch",
+      "rating": "5",
+      "img": "snatch.jpg",
+      "id": 13
+    },
+    {
+      "title": "Fast Times at Richmond High",
+      "rating": "4",
+      "img": "fasttimes.jpg",
+      "id": 14
+    },
+    {
+      "title": "The Dark Knight",
+      "rating": "5",
+      "img": "darkknight.jpg",
+      "id": 15
+    },
+    {
+      "title": "Shaun of the Dead",
+      "rating": "5",
+      "img": "shaun.jpg",
+      "id": 16
+    },
+    {
+      "title": "The Godfather",
+      "rating": "5",
+      "img": "godfather.jpg",
+      "id": 17
+    },
+    {
+      "title": "Raiders of the Lost Ark",
+      "rating": "4",
+      "img": "raiders.jpg",
+      "id": 18
+    },
+    {
+      "title": "Alien",
+      "rating": "4",
+      "img": "alien.jpg",
+      "id": 19
+    },
+    {
+      "title": "Taxi Driver",
+      "rating": "5",
+      "img": "taxidriver.jpg",
+      "id": 20
     }
   ]
 }
