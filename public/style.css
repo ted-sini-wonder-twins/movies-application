@@ -325,10 +325,12 @@ i {
 
 /*this is where css for background gif/loading img is*/
 body {
-    background-image: url("img/movieCountdown.gif");
-    background-size: 25%;
-    animation: gif-change 11s ease-in;
-    animation-iteration-count: infinite;
+    background-image: url("img/death-star.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-size: 25%;*/
+    /*animation: gif-change 11s ease-in;*/
+    /*animation-iteration-count: infinite;*/
 }
 @keyframes gif-change {
     0%{
@@ -426,12 +428,38 @@ ul img{
 }
 
 ul a{
-    text-decoration: none;
-    color: inherit;
+    color: white;
 }
 
 ul a:hover{
-    text-decoration: none;
-    color: inherit;
+    color: white;
 }
 
+li.logo {
+    max-width: 0;
+    overflow: hidden;
+    background: white;
+    transition: all 0.5s;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+body.fixed-nav nav {
+    position: fixed;
+    box-shadow: 0 5px 0 rgba(0,0,0,0.1);
+}
+
+.fixed-nav li.logo {
+    max-width: 500px;
+}
+
+#main-nav{
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#movie-area{
+    transform: scale(0.98);
+    transition: transform 0.5s;
+}

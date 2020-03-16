@@ -116,5 +116,21 @@ tl.fromTo(headerimage, 3, { height: "0%" }, { height: "90%", ease: Power1.easeIn
     .fromTo(headline, 0.7, { opacity: 0, x: 30 }, { opacity: 5, x: 0 }, "-=0.15");
 //end of js animation header testing
 
+// Grab the nav element
+const nav = document.querySelector('#main-nav');
+// Set nav distance from top of screen to a variable
+let topOfNav = nav.offsetTop;
 
+// Function that will change settings once nav reaches top of scree
+function fixNav() {
+  if (window.scrollY >= topOfNav) {
+    document.body.style.paddingTop = (nav.offsetHeight + 40) + 'px';
+    document.body.classList.add('fixed-nav');
+  } else {
+    document.body.classList.remove('fixed-nav');
+    document.body.style.paddingTop = 0;
+  }
+}
 
+// monitors when screen is scrolled
+window.addEventListener('scroll', fixNav);
