@@ -19,8 +19,8 @@ header {
 }
 
 /*this is for card poster images*/
-img {
-    object-fit: contain;
+.card img {
+    object-fit: fill;
 }
 
 .slider{
@@ -325,10 +325,12 @@ i {
 
 /*this is where css for background gif/loading img is*/
 body {
-    background-image: url("img/movieCountdown.gif");
-    background-size: 25%;
-    animation: gif-change 11s ease-in;
-    animation-iteration-count: infinite;
+    background-image: url("img/death-star.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-size: 25%;*/
+    /*animation: gif-change 11s ease-in;*/
+    /*animation-iteration-count: infinite;*/
 }
 @keyframes gif-change {
     0%{
@@ -373,7 +375,7 @@ a.badge-pill.badge-primary:hover {
 
 
 /*this is where bounce animation for buttons starts*/
-a {
+a.badge-pill {
     font-size: 1.5em;
 }
 
@@ -382,7 +384,7 @@ a {
 /* Cards CSS */
 /* Height and width of the overall card */
 .card{
-    width: 300px;
+    width: 250px;
     height: 375px;
     /* added the 3d illusion */
     perspective: 1000px;
@@ -420,4 +422,44 @@ a {
     font-size: 1.5em;
 }
 
+/* Sizing for logo in NavBar*/
+ul img{
+    height: 90px;
+}
 
+ul a{
+    color: white;
+}
+
+ul a:hover{
+    color: white;
+}
+
+li.logo {
+    max-width: 0;
+    overflow: hidden;
+    background: white;
+    transition: all 0.5s;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+body.fixed-nav nav {
+    position: fixed;
+    box-shadow: 0 5px 0 rgba(0,0,0,0.1);
+}
+
+.fixed-nav li.logo {
+    max-width: 500px;
+}
+
+#main-nav{
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#movie-area{
+    transform: scale(0.98);
+    transition: transform 0.5s;
+}

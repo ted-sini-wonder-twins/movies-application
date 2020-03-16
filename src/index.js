@@ -13,15 +13,13 @@ sayHello('World');
  */
 const {getMovies, deleteMovie, editMovies, postMovies} = require('./api.js');
 
-
 // Function to create HTML
 function createCard(title, rating,img) {
   // Variable for empty string
   var html = "";
   // Push all elements of the card to the string
   html += `
-  <div class="card col-3 p-0 bg-transparent border-dark">
-    
+  <div class="card col-lg-3 p-0 bg-transparent border-dark">
      <div class="flip position-relative w-100 h-100 text-center">
          <div class="front position-absolute w-100 h-100">
             <img src="../${img}" class="h-100 w-100" alt="movie poster">
@@ -29,12 +27,10 @@ function createCard(title, rating,img) {
          <div class="back position-absolute w-100 h-100 d-flex flex-column justify-content-center align-items-center">
             <h5>${title}</h5>
             <h5>Rating: ${rating}</h5>
-            <div class="d-flex w-100 justify-content-around">
+            <div class="d-flex mt-5 w-100 justify-content-around">
                 <i class="fas fa-edit cLink"></i>
                 <i class="far fa-trash-alt cLink"></i>
             </div>
-            
-            
          </div>
      </div>
   </div>
@@ -58,6 +54,33 @@ getMovies().then((movies) => {
 }).catch((error) => {
   alert('Oh no! Something went wrong.\nCheck the console for details.');
   console.log(error);
+});
+
+// When user submits their movie
+$("#customEntry").click( () => {
+  // Take text in title field
+  let title = $("#customTitle").val();
+  // Take text in rating field
+  let rating = $("#customRating").val();
+  // Console logs for debugging
+  // console.log(title);
+  // console.log(rating);
+
+  // Add movie based on info
+  postMovies(title,rating)
+      // Create card and add to HTML
+      .then( () => $("#movie-area").append( createCard(title,rating,"img/coming-soon.png") ) );
+
+  // Clears text fields
+  $("#customTitle").val("");
+  $("#customRating").val("");
+});
+
+// When user closes "add movie" modal
+$("#closeBtn").click( () => {
+  // Clears text fields
+  $("#customTitle").val("");
+  $("#customRating").val("");
 });
 
 
@@ -93,5 +116,21 @@ tl.fromTo(headerimage, 3, { height: "0%" }, { height: "90%", ease: Power1.easeIn
     .fromTo(headline, 0.7, { opacity: 0, x: 30 }, { opacity: 5, x: 0 }, "-=0.15");
 //end of js animation header testing
 
+// Grab the nav element
+const nav = document.querySelector('#main-nav');
+// Set nav distance from top of screen to a variable
+let topOfNav = nav.offsetTop;
 
+// Function that will change settings once nav reaches top of scree
+function fixNav() {
+  if (window.scrollY >= topOfNav) {
+    document.body.style.paddingTop = (nav.offsetHeight + 40) + 'px';
+    document.body.classList.add('fixed-nav');
+  } else {
+    document.body.classList.remove('fixed-nav');
+    document.body.style.paddingTop = 0;
+  }
+}
 
+// monitors when screen is scrolled
+window.addEventListener('scroll', fixNav);

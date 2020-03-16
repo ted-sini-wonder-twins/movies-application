@@ -13,15 +13,15 @@ module.exports = {
     })
         .then(response => response.json());
   },
-  postMovies: (movie) => {
+  postMovies: (title,rating) => {
+    let newMovie = {title: title, rating: rating, img:"img/coming-soon.png"};
     return fetch('/api/movies',{
       method: 'Post',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(movie)
+      body: JSON.stringify(newMovie)
     })
-        .then(response => response.json());
   },
   deleteMovie: (id) => {
     return fetch(`/api/movies/${id}`, {
