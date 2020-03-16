@@ -13,12 +13,6 @@
       "id": 2
     },
     {
-      "title": "Star Wars: The Empire Strikes Back",
-      "rating": "5",
-      "img": "img/esbMoviePoster.jpg",
-      "id": 3
-    },
-    {
       "title": "Star Wars: Return of the Jedi",
       "rating": "5",
       "img": "img/rotjMoviePoster.jpg",
@@ -37,12 +31,6 @@
       "id": 6
     },
     {
-      "title": "2001: A Space Odyssey",
-      "rating": "4",
-      "img": "img/odyssey.jpg",
-      "id": 7
-    },
-    {
       "title": "Pulp Fiction",
       "rating": "4",
       "img": "img/pulp.jpg",
@@ -53,12 +41,6 @@
       "rating": "4",
       "img": "img/28days.jpg",
       "id": 9
-    },
-    {
-      "title": "Star Wars: The Phantom Menace",
-      "rating": "4",
-      "img": "img/phantom.jpg",
-      "id": 10
     },
     {
       "title": "Star Wars: Attack of the Clones",
@@ -107,12 +89,6 @@
       "rating": "4",
       "img": "img/raiders.jpg",
       "id": 18
-    },
-    {
-      "title": "Alien",
-      "rating": "4",
-      "img": "img/alien.jpg",
-      "id": 19
     },
     {
       "title": "Taxi Driver",

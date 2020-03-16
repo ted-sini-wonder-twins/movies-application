@@ -12,8 +12,11 @@ sayHello('World');
 /**
  * require style imports
  */
-const {getMovies, deleteMovie, editMovies, postMovies} = require('./api.js');
+const {getMovies, deleteMovies, editMovies, postMovies} = require('./api.js');
 // $(document).ready( () => {
+
+let userTitle = '';
+let userRating = '';
 
 // Function to create HTML
   function createCard(title, rating, img, id) {
@@ -27,12 +30,13 @@ const {getMovies, deleteMovie, editMovies, postMovies} = require('./api.js');
             <img src="../${img}" class="h-100 w-100" alt="movie poster">
          </div>
          <div class="back position-absolute w-100 h-100 d-flex flex-column justify-content-center align-items-center">
-            <h5>${title}</h5>
-            <h5>Rating: ${rating}</h5>
+            <h5 class="editable">${title}</h5>
+            <h5>Rating:<span class="editable">${rating}</span></h5>
             <div class="d-flex mt-5 w-100 justify-content-around">
                 <i class="fas fa-edit cLink" id="${id}-edit"></i>
                 <i class="far fa-trash-alt cLink" id="${id}-delete"></i>
             </div>
+            <button class="hide btn btn-primary" id="user-update">Update</button>
          </div>
      </div>
   </div>
@@ -49,32 +53,52 @@ let createCards = (movies) => {
     // console.log(`id#${id} - ${title} - rating: ${rating} - img: ${img}`);
     // Added cards to div / creates cards using movie info
     $("#movie-area").append(createCard(title, rating, img, id));
+
+    // Add click event for trash can
+    $(".fa-trash-alt").on('click', (e) => {
+      // Console log for debugging
+      console.log(parseFloat(e.target.id));
+      console.log("delete");
+      let parsing = parseFloat(e.target.id);
+      deleteMovies(parsing)
+          .then(data => {
+            $("#movie-area").empty();
+            getMovies().then((movies) => {
+              createCards(movies);
+            }).catch((error) => {
+              alert('Oh no! Something went wrong.\nCheck the console for details.');
+              console.log(error);
+            });
+          });
+    });
+
+    $(".fa-edit").on('click', (e) => {
+      $('.editable').attr('contentEditable', 'true').css('background-color','white');
+      $('div#user-update').toggleClass('hide');
+    //   console.log("edit");
+    //   let editID = parseFloat(e.target.id);
+    //   getMovies().then((data) => {
+    //     let editing = data.filter(movie =>
+    //         movie.id === editID
+    //     );
+    //     console.log(editing[0]);
+    //     editMovies(editID, editing[0])
+    //   });
+    });
   });
 };
 
 // Runs movies and take the readable file
   getMovies().then((movies) => {
     createCards(movies);
+
+
+
   }).catch((error) => {
     alert('Oh no! Something went wrong.\nCheck the console for details.');
     console.log(error);
   });
 
-// Add click event for trash can
-$("#movie-area").on('click',$(".fa-trash-alt"), (e) => {
-  // Console log for debugging
-  console.log(parseFloat(e.target.id));
-  deleteMovie( parseFloat(e.target.id) )
-      .then(data => {
-        $("#movie-area").empty();
-        getMovies().then((movies) => {
-          createCards(movies);
-        }).catch((error) => {
-          alert('Oh no! Something went wrong.\nCheck the console for details.');
-          console.log(error);
-        });
-      });
-});
 
 // When user submits their movie
   $("#customEntry").click(() => {
@@ -87,9 +111,16 @@ $("#movie-area").on('click',$(".fa-trash-alt"), (e) => {
     // console.log(rating);
 
     // Add movie based on info
-    postMovies(title, rating)
+    postMovies(title, rating);
+    $('#movie-area').empty();
+    getMovies()
         // Create card and add to HTML
-        .then((data) => $("#movie-area").append(createCard(data.title, data.rating, "img/coming-soon.png",data.id)));
+        .then((data) => createCards(data))
+        .catch((error) => {
+          alert('Oh no! Something went wrong.\nCheck the console for details.');
+          console.log(error);
+        });
+
     // Clears text fields
     $("#customTitle").val("");
     $("#customRating").val("");
@@ -101,6 +132,18 @@ $("#movie-area").on('click',$(".fa-trash-alt"), (e) => {
     $("#customTitle").val("");
     $("#customRating").val("");
   });
+
+  //function searchMovies(e) {
+//     e.preventDefault();
+//     var html = "";
+//     for (var i = 0; i < movies.length; i += 1) {
+//         if (movies[i].name.toLowerCase().includes(document.getElementById("movie-input").value.toLowerCase())){
+//             console.log(movies.name);
+//             html = html + createCard(movies[i]);
+//         }
+//         document.innerHTML = html;
+//     }
+// }
 
 
 //start of js animation testing

@@ -23,7 +23,7 @@ module.exports = {
       body: JSON.stringify(newMovie)
     }).then( response => response.json());
   },
-  deleteMovie: (id) => {
+  deleteMovies: (id) => {
     return fetch(`/api/movies/${id}`, {
       method: 'Delete',
       headers: {
