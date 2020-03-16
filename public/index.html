@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>My Application</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Chivo:900i|Limelight&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -29,24 +29,60 @@
 <div class="slider"></div>
 
 <!--    navbar begins here-->
-<nav class="navbar navbar-light bg-dark">
-    <i class="fab fa-github"></i>
-    <i class="fab fa-instagram"></i>
-    <i class="fab fa-facebook"></i>
-    <i class="fab fa-youtube"></i>
-    <i class="fab fa-twitter-square"></i>
-    <ul>
-        <li class="logo"></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+<nav class="navbar navbar-light bg-dark p-0 mb-5">
+<!--    <i class="fab fa-github"></i>-->
+<!--    <i class="fab fa-instagram"></i>-->
+<!--    <i class="fab fa-facebook"></i>-->
+<!--    <i class="fab fa-youtube"></i>-->
+<!--    <i class="fab fa-twitter-square"></i>-->
+    <ul class="m-0 p-0 w-100 list-unstyled d-flex">
+        <li class="logo text-center">
+            <img src="img/grey-jedi-symbol.jpg" alt="Grey Jedi Logo">
+        </li>
+        <!-- Click to open Modal to add movie -->
+        <li class=" text-center m-auto"><a type="button" class="btn" data-toggle="modal" data-target="#customMovie">Wanna Add?</a></li>
+        <li class=" text-center m-auto">Looking for Something?</li>
     </ul>
 </nav>
 
+<!-- Modal for additional movie -->
+<div class="modal fade" id="customMovie">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Fill out the Info for your movie choice</h4>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <!-- Title Section -->
+                <section>
+                    <label for="customTitle">Title: </label>
+                    <input type="text" id="customTitle" placeholder="Enter Title Name" required>
+                </section>
+                <!-- Rating Section -->
+                <section>
+                    <label for="customTitle">Rating: </label>
+                    <input type="text" id="customRating" placeholder="Enter Rating 1-5" required>
+                </section>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <!-- Add Button -->
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="customEntry">Add My Movie</button>
+                <!-- Close Button -->
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="closeBtn">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 <!--fluid boot container starts here-->
-<div class="container-fluid row p-0 m-0" id="movie-area">
+<div class="container-fluid row px-5 m-0" id="movie-area">
 
 </div>
 

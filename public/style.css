@@ -19,8 +19,8 @@ header {
 }
 
 /*this is for card poster images*/
-img {
-    object-fit: contain;
+.card img {
+    object-fit: fill;
 }
 
 .slider{
@@ -373,7 +373,7 @@ a.badge-pill.badge-primary:hover {
 
 
 /*this is where bounce animation for buttons starts*/
-a {
+a.badge-pill {
     font-size: 1.5em;
 }
 
@@ -382,7 +382,7 @@ a {
 /* Cards CSS */
 /* Height and width of the overall card */
 .card{
-    width: 300px;
+    width: 250px;
     height: 375px;
     /* added the 3d illusion */
     perspective: 1000px;
@@ -420,4 +420,18 @@ a {
     font-size: 1.5em;
 }
 
+/* Sizing for logo in NavBar*/
+ul img{
+    height: 90px;
+}
+
+ul a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul a:hover{
+    text-decoration: none;
+    color: inherit;
+}
 
