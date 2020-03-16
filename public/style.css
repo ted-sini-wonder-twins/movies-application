@@ -464,3 +464,9 @@ body.fixed-nav nav {
     transform: scale(0.98);
     transition: transform 0.5s;
 }
+
+
+.hide {
+    display: none;
+}
+
