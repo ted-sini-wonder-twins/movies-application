@@ -325,9 +325,10 @@ i {
 
 /*this is where css for background gif/loading img is*/
 body {
-    background-image: url("img/death-star.gif");
+    background-image: url("img/lightspeed.gif");
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: dimgrey;;
     /*background-size: 25%;*/
     /*animation: gif-change 11s ease-in;*/
     /*animation-iteration-count: infinite;*/
