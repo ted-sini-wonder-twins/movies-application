@@ -20,7 +20,7 @@ header {
 
 /*this is for card poster images*/
 .card img {
-    object-fit: fill;
+    object-fit: contain;
 }
 
 .slider{
