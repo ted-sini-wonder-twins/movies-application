@@ -47,12 +47,6 @@
       "rating": "4",
       "img": "img/pulp.jpg",
       "id": 8
-    },
-    {
-      "title": "Endgame",
-      "rating": "5",
-      "img": "img/coming-soon.png",
-      "id": 9
     }
   ]
 }

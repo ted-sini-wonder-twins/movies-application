@@ -14,7 +14,7 @@ sayHello('World');
 const {getMovies, deleteMovie, editMovies, postMovies} = require('./api.js');
 
 // Function to create HTML
-function createCard(title, rating,img) {
+function createCard(title, rating,img,id) {
   // Variable for empty string
   var html = "";
   // Push all elements of the card to the string
@@ -82,8 +82,6 @@ $("#closeBtn").click( () => {
   $("#customTitle").val("");
   $("#customRating").val("");
 });
-
-
 
 
 //start of js animation testing
