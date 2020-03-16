@@ -21,7 +21,7 @@ module.exports = {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(newMovie)
-    })
+    }).then( response => response.json());
   },
   deleteMovie: (id) => {
     return fetch(`/api/movies/${id}`, {
