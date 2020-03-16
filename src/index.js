@@ -30,8 +30,8 @@ const {getMovies, deleteMovie, editMovies, postMovies} = require('./api.js');
             <h5>${title}</h5>
             <h5>Rating: ${rating}</h5>
             <div class="d-flex mt-5 w-100 justify-content-around">
-                <i class="fas fa-edit cLink"></i>
-                <i class="far fa-trash-alt cLink" id="${id}"></i>
+                <i class="fas fa-edit cLink" id="${id}-edit"></i>
+                <i class="far fa-trash-alt cLink" id="${id}-delete"></i>
             </div>
          </div>
      </div>
@@ -42,37 +42,39 @@ const {getMovies, deleteMovie, editMovies, postMovies} = require('./api.js');
     return html;
   }
 
-// When Delete button is clicked
-// $("#movie-area").on("click",$("li.fa-trash-alt"), () => {
-//   // Console log for debugging
-//   console.log("click");
-//   // Set id to variable
-//   let movieId = $(this).parentsUntil(".card").attr("id");
-//   console.log(movieId);
-// });
-
+// Function for creating cards
+let createCards = (movies) => {
+  movies.forEach(({title, rating, img, id}) => {
+    // Console log for debugging
+    // console.log(`id#${id} - ${title} - rating: ${rating} - img: ${img}`);
+    // Added cards to div / creates cards using movie info
+    $("#movie-area").append(createCard(title, rating, img, id));
+  });
+};
 
 // Runs movies and take the readable file
   getMovies().then((movies) => {
-    // Console log for debugging
-    // console.log('Here are all the movies:');
-    // Cycles thru each movie in the database
-    movies.forEach(({title, rating, img, id}) => {
-      // Console log for debugging
-      // console.log(`id#${id} - ${title} - rating: ${rating} - img: ${img}`);
-      // Added cards to div / creates cards using movie info
-      $("#movie-area").append(createCard(title, rating, img, id));
-    });
+    createCards(movies);
   }).catch((error) => {
     alert('Oh no! Something went wrong.\nCheck the console for details.');
     console.log(error);
   });
 
-
-// $("#main-nav").on("click", ()=> {
-//   console.log($(this).html());
-//
-// });
+// Add click event for trash can
+$("#movie-area").on('click',$(".fa-trash-alt"), (e) => {
+  // Console log for debugging
+  console.log(parseFloat(e.target.id));
+  deleteMovie( parseFloat(e.target.id) )
+      .then(data => {
+        $("#movie-area").empty();
+        getMovies().then((movies) => {
+          createCards(movies);
+        }).catch((error) => {
+          alert('Oh no! Something went wrong.\nCheck the console for details.');
+          console.log(error);
+        });
+      });
+});
 
 // When user submits their movie
   $("#customEntry").click(() => {
@@ -87,8 +89,7 @@ const {getMovies, deleteMovie, editMovies, postMovies} = require('./api.js');
     // Add movie based on info
     postMovies(title, rating)
         // Create card and add to HTML
-        .then(() => $("#movie-area").append(createCard(title, rating, "img/coming-soon.png")));
-
+        .then((data) => $("#movie-area").append(createCard(data.title, data.rating, "img/coming-soon.png",data.id)));
     // Clears text fields
     $("#customTitle").val("");
     $("#customRating").val("");
