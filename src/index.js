@@ -82,7 +82,7 @@ let createCards = (movies) => {
   // Click on the pencil to allow user to edit info
   $(".fa-edit").on('click', (e) => {
     let editID = parseInt(e.target.id);
-    console.log(editID);
+    // console.log(editID);
     let editTitle;
     let editRating;
     // Turn title and rating into editable fields and turn background white for visual cue
@@ -104,7 +104,7 @@ let createCards = (movies) => {
 
       // Place edit movie info into an object
       let editedMovie = {title:editTitle,rating:editRating};
-      console.log(editedMovie);
+      // console.log(editedMovie);
 
       // Run function to retrieve movie by id and modify content based on new info
       editMovies(editID,editedMovie);
