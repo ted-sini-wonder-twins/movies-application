@@ -467,6 +467,6 @@ body.fixed-nav nav {
 
 
 .hide {
-    display: none;
+    visibility: hidden;
 }
 

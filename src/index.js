@@ -30,13 +30,12 @@ let userRating = '';
             <img src="../${img}" class="h-100 w-100" alt="movie poster">
          </div>
          <div class="back position-absolute w-100 h-100 d-flex flex-column justify-content-center align-items-center">
-            <h5 class="editable">${title}</h5>
-            <h5>Rating:<span class="editable">${rating}</span></h5>
+            <h5 class="editable" id="new-user-title">${title}</h5>
+            <h5>Rating:<span class="editable" id="new-user-rating">${rating}</span></h5>
             <div class="d-flex mt-5 w-100 justify-content-around">
                 <i class="fas fa-edit cLink" id="${id}-edit"></i>
                 <i class="far fa-trash-alt cLink" id="${id}-delete"></i>
             </div>
-            <button class="hide btn btn-primary" id="user-update">Update</button>
          </div>
      </div>
   </div>
@@ -54,51 +53,83 @@ let createCards = (movies) => {
     // Added cards to div / creates cards using movie info
     $("#movie-area").append(createCard(title, rating, img, id));
 
-    // Add click event for trash can
-    $(".fa-trash-alt").on('click', (e) => {
-      // Console log for debugging
-      console.log(parseFloat(e.target.id));
-      console.log("delete");
-      let parsing = parseFloat(e.target.id);
-      deleteMovies(parsing)
-          .then(data => {
-            $("#movie-area").empty();
-            getMovies().then((movies) => {
-              createCards(movies);
-            }).catch((error) => {
-              alert('Oh no! Something went wrong.\nCheck the console for details.');
-              console.log(error);
-            });
-          });
-    });
+  });
 
-    $(".fa-edit").on('click', (e) => {
-      $('.editable').attr('contentEditable', 'true').css('background-color','white');
-      $('div#user-update').toggleClass('hide');
-    //   console.log("edit");
-    //   let editID = parseFloat(e.target.id);
-    //   getMovies().then((data) => {
-    //     let editing = data.filter(movie =>
-    //         movie.id === editID
-    //     );
-    //     console.log(editing[0]);
-    //     editMovies(editID, editing[0])
-    //   });
-    });
+  // Add click event for trash can
+  $(".fa-trash-alt").on('click', (e) => {
+    // Console log for debugging
+    console.log(parseFloat(e.target.id));
+    console.log("delete");
+    // Takes value of id and turn it into a number
+    let parsing = parseFloat(e.target.id);
+    // Using Id deletes movie
+    deleteMovies(parsing)
+        .then(data => {
+          // Clears data in div where movies goes
+          $("#movie-area").empty();
+          // Gets new database and generates cards for them
+          getMovies()
+              .then((movies) => {
+                createCards(movies);
+              })
+              .catch((error) => {
+                alert('Oh no! Something went wrong.\nCheck the console for details.');
+                console.log(error);
+              });
+        });
+  });
+
+  // Click on the pencil to allow user to edit info
+  $(".fa-edit").on('click', (e) => {
+    let editID = parseInt(e.target.id);
+    console.log(editID);
+    let editTitle;
+    let editRating;
+    // Turn title and rating into editable fields and turn background white for visual cue
+    $('.editable').attr('contentEditable', 'true').css('background-color','white');
+
+    // Create btn and text telling user to update fields
+    $(e.target).parent().parent().append(`<button class="btn" id="user-update">Update</button>`).prepend(`<p>Edit info</p>`);
+
+    // On Update click take user info
+    $($("#user-update").click( (u)=>{
+      editTitle = $(u.target).parent().children(":nth-child(2)").text();
+      editRating = $(u.target).parent().children(":nth-child(3)").children()[0].innerHTML;
+      // console.log(editTitle);
+      // console.log(editRating);
+
+      // Remove Update button and make content non-editable
+      $(u.target).remove();
+      $(".editable").removeAttr('contentEditable').css("background-color","none");
+
+      // Place edit movie info into an object
+      let editedMovie = {title:editTitle,rating:editRating};
+      console.log(editedMovie);
+
+      // Run function to retrieve movie by id and modify content based on new info
+      editMovies(editID,editedMovie);
+
+      // Erases cards currently, gets new database and generates cards for them
+      $("#movie-area").empty();
+      getMovies()
+          .then((movies) => {
+            createCards(movies);
+          })
+          .catch((error) => {
+            alert('Oh no! Something went wrong.\nCheck the console for details.');
+            console.log(error);
+          });
+    }))
   });
 };
 
 // Runs movies and take the readable file
   getMovies().then((movies) => {
     createCards(movies);
-
-
-
   }).catch((error) => {
     alert('Oh no! Something went wrong.\nCheck the console for details.');
     console.log(error);
   });
-
 
 // When user submits their movie
   $("#customEntry").click(() => {

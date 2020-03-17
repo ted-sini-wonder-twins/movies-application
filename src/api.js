@@ -4,8 +4,8 @@ module.exports = {
       .then(response => response.json());
   },
   editMovies: (id, movie) => {
-    return fetch(`/api/movies/${id}`, {
-      method: 'Patch',
+    return fetch("/api/movies/" + id, {
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
