@@ -12,11 +12,22 @@ sayHello('World');
 /**
  * require style imports
  */
-const {getMovies, deleteMovies, editMovies, postMovies} = require('./api.js');
+const {getMovies, deleteMovies, edi5tMovies, postMovies} = require('./api.js');
 // $(document).ready( () => {
 
 let userTitle = '';
 let userRating = '';
+
+$('.headerimage').delay(7110).queue( function () {
+  $('.hope').fadeIn(5000);
+  $('.sw').fadeOut(5000);
+  $('.fin').fadeOut(5000);
+});
+
+
+
+
+
 
 // Function to create HTML
   function createCard(title, rating, img, id) {
@@ -24,7 +35,7 @@ let userRating = '';
     var html = "";
     // Push all elements of the card to the string
     html += `
-  <div class="card col-lg-3 p-0 bg-transparent border-dark">
+  <div class="card col-lg-3 p-0 bg-transparent border-dark border-0">
      <div class="flip position-relative w-100 h-100 text-center">
          <div class="front position-absolute w-100 h-100">
             <img src="../${img}" class="h-100 w-100" alt="movie poster">
@@ -164,7 +175,7 @@ let createCards = (movies) => {
     $("#customRating").val("");
   });
 
-  //function searchMovies(e) {
+//   function searchMovies(e) {
 //     e.preventDefault();
 //     var html = "";
 //     for (var i = 0; i < movies.length; i += 1) {
@@ -175,6 +186,8 @@ let createCards = (movies) => {
 //         document.innerHTML = html;
 //     }
 // }
+//
+// document.getElementById("movie-input").addEventListener("keyup", searchMovies);
 
 
 //start of js animation testing
@@ -227,3 +240,10 @@ let createCards = (movies) => {
   window.addEventListener('scroll', fixNav);
 
 // });
+
+//
+// $(document).delay(3000).queue( function () {
+//   $('.fin').css('background-image', 'url("img/newhope.jpeg")');
+//   $('.sw').css('background-image', 'url("img/newhope.jpeg")');
+// });
+

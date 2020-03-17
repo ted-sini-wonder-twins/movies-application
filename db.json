@@ -119,6 +119,127 @@
       "rating": "5",
       "img": "img/taxidriver.jpg",
       "id": 20
+    },
+    {
+      "title": "Back to the Future",
+      "rating": "4",
+      "img": "img/backtofuture.jpg",
+      "id": 21
+    },
+    {
+      "title": "Braveheart",
+      "rating": "5",
+      "img": "img/braveheart.jpg",
+      "id": 22
+    },
+    {
+      "title": "The Silence of the Lambs",
+      "rating": "4",
+      "img": "img/silence.jpg",
+      "id": 23
+    },
+    {
+      "title": "Apocalypse Now",
+      "rating": "4",
+      "img": "img/apocalypse.jpg",
+      "id": 24
+    },
+    {
+      "title": "Avatar",
+      "rating": "4",
+      "img": "img/avatar.jpg",
+      "id": 25
+    },
+    {
+      "title": "Good Will Hunting",
+      "rating": "5",
+      "img": "img/goodwill.jpg",
+      "id": 26
+    },
+    {
+      "title": "Rock 'n' Rolla",
+      "rating": "4",
+      "img": "img/rocknrolla.jpg",
+      "id": 27
+    },
+    {
+      "title": "The Big Lebowski",
+      "rating": "4",
+      "img": "img/biglebowski.jpg",
+      "id": 28
+    },
+    {
+      "title": "The Breakfast Club",
+      "rating": "4",
+      "img": "img/breakfastclub.jpg",
+      "id": 29
+    },
+    {
+      "title": "Deadpool",
+      "rating": "4",
+      "img": "img/deadpool.jpg",
+      "id": 30
+    },
+    {
+      "title": "Scott Pilgrim vs. The World",
+      "rating": "4",
+      "img": "img/scottpilgrim.jpg",
+      "id": 31
+    },
+    {
+      "title": "Rocky Horror Picture Show",
+      "rating": "4",
+      "img": "img/rocky.jpg",
+      "id": 32
+    },
+    {
+      "title": "Labyrinth",
+      "rating": "5",
+      "img": "img/labyrinth.jpg",
+      "id": 33
+    },
+    {
+      "title": "Willow",
+      "rating": "4",
+      "img": "img/willow.jpg",
+      "id": 34
+    },
+    {
+      "title": "Ready Player One",
+      "rating": "5",
+      "img": "img/readyplayerone.jpg",
+      "id": 35
+    },
+    {
+      "title": "Logan",
+      "rating": "5",
+      "img": "img/logan.jpg",
+      "id": 36
+    },
+    {
+      "title": "Jaws",
+      "rating": "5",
+      "img": "img/jaws.jpg",
+      "id": 37
+    },
+    {
+      "title": "Dark Knight Rises",
+      "rating": "5",
+      "img": "img/dkrises.jpg",
+      "id": 38
+    },
+    {
+      "title": "Scarface",
+      "rating": "5",
+      "img": "img/scarface.jpg",
+      "id": 39
+    },
+    {
+      "title": "The Exorcist",
+      "rating": "4",
+      "img": "img/exorcist.jpg",
+      "id": 40
     }
+
   ]
 }
