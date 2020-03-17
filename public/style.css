@@ -328,7 +328,7 @@ body {
     background-image: url("img/lightspeed.gif");
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: dimgrey;;
+    background-color: black;
     /*background-size: 25%;*/
     /*animation: gif-change 11s ease-in;*/
     /*animation-iteration-count: infinite;*/
@@ -463,6 +463,9 @@ body.fixed-nav nav {
 #movie-area{
     transform: scale(0.98);
     transition: transform 0.5s;
+    background-image: url("img/death-star.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
