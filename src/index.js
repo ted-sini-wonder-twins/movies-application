@@ -21,13 +21,16 @@ const nav = document.querySelector('#main-nav');
 // Set nav distance from top of screen to a variable
 let topOfNav = nav.offsetTop;
 
+
 // monitors when screen is scrolled
 window.addEventListener('scroll', fixNav);
+
 
 // Variable for when user edits
 let userTitle = '';
 let userRating = '';
 let userGenre = '';
+
 
 // Function to create HTML
 function createCard(title, rating, img, genre, id) {
@@ -56,6 +59,7 @@ function createCard(title, rating, img, genre, id) {
     // console.log(html);
     return html;
 }
+
 
 // Function for creating cards and adding event listeners to icons on cards
 let createCards = (movies) => {
@@ -138,6 +142,7 @@ let createCards = (movies) => {
     });
 };
 
+
 // Runs movies and take the readable file
 getMovies().then((movies) => {
     createCards(movies);
@@ -146,10 +151,12 @@ getMovies().then((movies) => {
     console.log(error);
 });
 
+
 // Set timeout to fade video after its done playing
 setTimeout( ()=>{
     $("video").fadeOut("slow");
 },22000);
+
 
 //start of js animation testing
 function slider(){
@@ -184,12 +191,14 @@ setTimeout( function(){
     slider();
 }, 22000);
 
+
 // Delay for screen animation until after video plays
 $('.headerimage').delay(24000).queue( function () {
   $('.hope').fadeIn(5000);
   $('.sw').fadeOut(5000);
   $('.fin').fadeOut(5000);
 });
+
 
 //first lightsaber
  $('#WA').hover( function () {
@@ -200,6 +209,7 @@ $('.headerimage').delay(24000).queue( function () {
       $('#green-crystal').css('animation:', 'lightsaber-power-off').css("display", "none");
  }));
 
+
 //second lightsaber
 $('#LfS').hover( function () {
     $('#red-crystal').css({
@@ -209,6 +219,7 @@ $('#LfS').hover( function () {
     $('#red-crystal').css('animation:', 'lightsaber-power-off').css("display", "none");
 }));
 
+
 // When user closes "add movie" modal
 $("#closeBtn").click(() => {
     // Clears text fields
@@ -216,16 +227,18 @@ $("#closeBtn").click(() => {
     $("#customRating").val("");
 });
 
+
 // Function that will change settings once nav reaches top of scree
 function fixNav() {
     if (window.scrollY >= topOfNav) {
-        document.body.style.paddingTop = (nav.offsetHeight + 40) + 'px';
+        document.body.style.paddingTop = (nav.offsetHeight) + 'px';
         document.body.classList.add('fixed-nav');
     } else {
         document.body.classList.remove('fixed-nav');
         document.body.style.paddingTop = 0;
     }
 }
+
 
 // When user submits their movie
   $("#customEntry").click(() => {
@@ -252,6 +265,7 @@ function fixNav() {
     $("#customTitle").val("");
     $("#customRating").val("");
   });
+
 
 //   function searchMovies(e) {
 //     e.preventDefault();
