@@ -2,6 +2,17 @@ html, body {
     height: 100%;
 }
 
+/*this is where css for background gif/loading img is*/
+body {
+    background-image: url("img/lightspeed.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    /*background-size: 25%;*/
+    /*animation: gif-change 11s ease-in;*/
+    /*animation-iteration-count: infinite;*/
+}
+
 /*this is start of js animation header test*/
 * {
     margin: 0;
@@ -13,35 +24,8 @@ header {
     height: 100vh;
 }
 
-/*.sw {*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    position: absolute;*/
-/*    animation: swFadeInOut;*/
-/*    animation-timing-function: ease-in-out;*/
-/*    animation-iteration-count: infinite;*/
-/*    animation-duration: 10s;*/
-/*    animation-direction: alternate;*/
-/*}*/
-/*@keyframes swFadeInOut {*/
-/*    0% {*/
-/*        opacity:1;*/
-/*    }*/
-/*    45% {*/
-/*        opacity:1;*/
-/*    }*/
-/*    55% {*/
-/*        opacity:0;*/
-/*    }*/
-/*    100% {*/
-/*        opacity:0;*/
-/*    }*/
-/*}*/
+header nav {
 
-
-/*this is for card poster images*/
-.card img {
-    object-fit: fill;
 }
 
 .slider{
@@ -61,19 +45,12 @@ header > nav{
     color: white;
     align-items: center;
 }
-/*font-family: 'Limelight', cursive;*/
-/*font-family: 'Chivo', sans-serif;*/
+
 #logo{
     grid-column: 2/3;
     font-size: 24px;
     font-family: 'Limelight', cursive;
 }
-
-/*#logo2{*/
-/*    grid-column: 2/3;*/
-/*    font-size: 20px;*/
-/*    font-family: 'Limelight', cursive;*/
-/*}*/
 
 header > section{
     display: flex;
@@ -93,7 +70,6 @@ header > section{
     opacity: .85;
     z-index: 1;
 }
-
 
 .headerimage img{
     width: 100%;
@@ -142,7 +118,6 @@ header > section{
     animation-delay: 4.5s;
     animation-iteration-count: 1;
 }
-
 
 /*start of flicker animation*/
 @-webkit-keyframes flicker {
@@ -349,6 +324,7 @@ header > section{
 }
 /*this is end of js animation header*/
 
+
 /*css for navbar*/
 .navbar {
     animation: background-color 11s ease-in-out;
@@ -403,16 +379,6 @@ i {
     margin: auto;
 }
 
-/*this is where css for background gif/loading img is*/
-body {
-    background-image: url("img/lightspeed.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: black;
-    /*background-size: 25%;*/
-    /*animation: gif-change 11s ease-in;*/
-    /*animation-iteration-count: infinite;*/
-}
 @keyframes gif-change {
     0%{
       background-size: 25%;
@@ -521,7 +487,7 @@ li.logo {
     font-size: 30px;
 }
 
-body.fixed-nav nav {
+body.fixed-nav nav#main-nav {
     position: fixed;
     box-shadow: 0 5px 0 rgba(0,0,0,0.1);
 }
@@ -701,4 +667,9 @@ video{
     z-index: 3;
     top: 0;
     object-fit: cover;
+}
+
+/*this is for card poster images*/
+.card img {
+    object-fit: fill;
 }

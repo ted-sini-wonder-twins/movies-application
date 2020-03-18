@@ -6,37 +6,30 @@ import sayHello from './hello';
 import $ from 'jquery'
 import 'bootstrap'
 
-sayHello('World');
+sayHello('Connected to Main');
 
 
 /**
  * require style imports
  */
-const {getMovies, deleteMovies, edi5tMovies, postMovies} = require('./api.js');
+const {getMovies, deleteMovies, editMovies, postMovies} = require('./api.js');
 // $(document).ready( () => {
 
+
+// Grab the nav element
+const nav = document.querySelector('#main-nav');
+// Set nav distance from top of screen to a variable
+let topOfNav = nav.offsetTop;
+
+// monitors when screen is scrolled
+window.addEventListener('scroll', fixNav);
+
+// Variable for when user edits
 let userTitle = '';
 let userRating = '';
 
-$('.headerimage').delay(24000).queue( function () {
-  $('.hope').fadeIn(5000);
-  $('.sw').fadeOut(5000);
-  $('.fin').fadeOut(5000);
-});
-
-
-//first lightsaber
- $('.text-center').mouseenter( function () {
-      $('#green-saber').css('display','block');
-  });
-
-//second lightsaber
-$('.text-center').mouseenter( function () {
-    $('#red-saber').css('display','block');
-});
-
 // Function to create HTML
-  function createCard(title, rating, img, id) {
+function createCard(title, rating, img, id) {
     // Variable for empty string
     var html = "";
     // Push all elements of the card to the string
@@ -60,93 +53,166 @@ $('.text-center').mouseenter( function () {
     // Console log for debugging
     // console.log(html);
     return html;
-  }
+}
 
-// Function for creating cards
+// Function for creating cards and adding event listeners to icons on cards
 let createCards = (movies) => {
-  movies.forEach(({title, rating, img, id}) => {
-    // Console log for debugging
-    // console.log(`id#${id} - ${title} - rating: ${rating} - img: ${img}`);
-    // Added cards to div / creates cards using movie info
-    $("#movie-area").append(createCard(title, rating, img, id));
+    movies.forEach(({title, rating, img, id}) => {
+        // Console log for debugging
+        // console.log(`id#${id} - ${title} - rating: ${rating} - img: ${img}`);
+        // Added cards to div / creates cards using movie info
+        $("#movie-area").append(createCard(title, rating, img, id));
 
-  });
+    });
 
-  // Add click event for trash can
-  $(".fa-trash-alt").on('click', (e) => {
-    // Console log for debugging
-    console.log(parseFloat(e.target.id));
-    console.log("delete");
-    // Takes value of id and turn it into a number
-    let parsing = parseFloat(e.target.id);
-    // Using Id deletes movie
-    deleteMovies(parsing)
-        .then(data => {
-          // Clears data in div where movies goes
-          $("#movie-area").empty();
-          // Gets new database and generates cards for them
-          getMovies()
-              .then((movies) => {
-                createCards(movies);
-              })
-              .catch((error) => {
-                alert('Oh no! Something went wrong.\nCheck the console for details.');
-                console.log(error);
-              });
-        });
-  });
+    // Add click event for trash can
+    $(".fa-trash-alt").on('click', (e) => {
+        // Console log for debugging
+        console.log(parseFloat(e.target.id));
+        console.log("delete");
+        // Takes value of id and turn it into a number
+        let parsing = parseFloat(e.target.id);
+        // Using Id deletes movie
+        deleteMovies(parsing)
+            .then(data => {
+                // Clears data in div where movies goes
+                $("#movie-area").empty();
+                // Gets new database and generates cards for them
+                getMovies()
+                    .then((movies) => {
+                        createCards(movies);
+                    })
+                    .catch((error) => {
+                        alert('Oh no! Something went wrong.\nCheck the console for details.');
+                        console.log(error);
+                    });
+            });
+    });
 
-  // Click on the pencil to allow user to edit info
-  $(".fa-edit").on('click', (e) => {
-    let editID = parseInt(e.target.id);
-    // console.log(editID);
-    let editTitle;
-    let editRating;
-    // Turn title and rating into editable fields and turn background white for visual cue
-    $('.editable').attr('contentEditable', 'true').css('background-color','white');
+    // Click on the pencil to allow user to edit info
+    $(".fa-edit").on('click', (e) => {
+        let editID = parseInt(e.target.id);
+        // console.log(editID);
+        let editTitle;
+        let editRating;
+        // Turn title and rating into editable fields and turn background white for visual cue
+        $('.editable').attr('contentEditable', 'true').css('background-color','white');
 
-    // Create btn and text telling user to update fields
-    $(e.target).parent().parent().append(`<button class="btn" id="user-update">Update</button>`).prepend(`<p>Edit info</p>`);
+        // Create btn and text telling user to update fields
+        $(e.target).parent().parent().append(`<button class="btn" id="user-update">Update</button>`).prepend(`<p>Edit info</p>`);
 
-    // On Update click take user info
-    $($("#user-update").click( (u)=>{
-      editTitle = $(u.target).parent().children(":nth-child(2)").text();
-      editRating = $(u.target).parent().children(":nth-child(3)").children()[0].innerHTML;
-      // console.log(editTitle);
-      // console.log(editRating);
+        // On Update click take user info
+        $($("#user-update").click( (u)=>{
+            editTitle = $(u.target).parent().children(":nth-child(2)").text();
+            editRating = $(u.target).parent().children(":nth-child(3)").children()[0].innerHTML;
+            // console.log(editTitle);
+            // console.log(editRating);
 
-      // Remove Update button and make content non-editable
-      $(u.target).remove();
-      $(".editable").removeAttr('contentEditable').css("background-color","none");
+            // Remove Update button and make content non-editable
+            $(u.target).remove();
+            $(".editable").removeAttr('contentEditable').css("background-color","none");
 
-      // Place edit movie info into an object
-      let editedMovie = {title:editTitle,rating:editRating};
-      // console.log(editedMovie);
+            // Place edit movie info into an object
+            let editedMovie = {title:editTitle,rating:editRating};
+            // console.log(editedMovie);
 
-      // Run function to retrieve movie by id and modify content based on new info
-      editMovies(editID,editedMovie);
+            // Run function to retrieve movie by id and modify content based on new info
+            editMovies(editID,editedMovie);
 
-      // Erases cards currently, gets new database and generates cards for them
-      $("#movie-area").empty();
-      getMovies()
-          .then((movies) => {
-            createCards(movies);
-          })
-          .catch((error) => {
-            alert('Oh no! Something went wrong.\nCheck the console for details.');
-            console.log(error);
-          });
-    }))
-  });
+            // Erases cards currently, gets new database and generates cards for them
+            $("#movie-area").empty();
+            getMovies()
+                .then((movies) => {
+                    createCards(movies);
+                })
+                .catch((error) => {
+                    alert('Oh no! Something went wrong.\nCheck the console for details.');
+                    console.log(error);
+                });
+        }))
+    });
 };
 
 // Runs movies and take the readable file
-  getMovies().then((movies) => {
+getMovies().then((movies) => {
     createCards(movies);
-  }).catch((error) => {
+}).catch((error) => {
     alert('Oh no! Something went wrong.\nCheck the console for details.');
     console.log(error);
+});
+
+// Set timeout to fade video after its done playing
+setTimeout( ()=>{
+    $("video").fadeOut("slow");
+},22000);
+
+//start of js animation testing
+function slider(){
+    const headerimage = document.querySelector(".headerimage");
+    const slider = document.querySelector(".slider");
+    const logo = document.querySelector("#logo");
+    const headline = document.querySelector(".headline");
+
+    const tl = new TimelineMax();
+
+    tl.fromTo(headerimage, 3, {height: "0%"}, {height: "90%", ease: Power1.easeInOut})
+        .fromTo(
+            headerimage,
+            1.2,
+            {width: "100%"},
+            {width: "80%", ease: Power1.easeInOut}
+        )
+
+        .fromTo(
+            slider,
+            1.2,
+            {x: "-100%"},
+            {x: "0%", ease: Power1.easeInOut},
+            "-=1.2"
+        )
+
+        .fromTo(logo, 0.9, {opacity: 0, x: 30}, {opacity: 5, x: 0}, "-=0.15")
+        .fromTo(headline, 0.7, {opacity: 0, x: 30}, {opacity: 5, x: 0}, "-=0.15");
+//end of js animation header testing
+}
+setTimeout( function(){
+    slider();
+}, 22000);
+
+// Delay for screen animation until after video plays
+$('.headerimage').delay(24000).queue( function () {
+  $('.hope').fadeIn(5000);
+  $('.sw').fadeOut(5000);
+  $('.fin').fadeOut(5000);
+});
+
+//first lightsaber
+ $('.text-center').mouseenter( function () {
+      $('#green-saber').css('display','block');
   });
+
+//second lightsaber
+$('.text-center').mouseenter( function () {
+    $('#red-saber').css('display','block');
+});
+
+// When user closes "add movie" modal
+$("#closeBtn").click(() => {
+    // Clears text fields
+    $("#customTitle").val("");
+    $("#customRating").val("");
+});
+
+// Function that will change settings once nav reaches top of scree
+function fixNav() {
+    if (window.scrollY >= topOfNav) {
+        document.body.style.paddingTop = (nav.offsetHeight + 40) + 'px';
+        document.body.classList.add('fixed-nav');
+    } else {
+        document.body.classList.remove('fixed-nav');
+        document.body.style.paddingTop = 0;
+    }
+}
 
 // When user submits their movie
   $("#customEntry").click(() => {
@@ -174,13 +240,6 @@ let createCards = (movies) => {
     $("#customRating").val("");
   });
 
-// When user closes "add movie" modal
-  $("#closeBtn").click(() => {
-    // Clears text fields
-    $("#customTitle").val("");
-    $("#customRating").val("");
-  });
-
 //   function searchMovies(e) {
 //     e.preventDefault();
 //     var html = "";
@@ -195,71 +254,4 @@ let createCards = (movies) => {
 //
 // document.getElementById("movie-input").addEventListener("keyup", searchMovies);
 
-
-//start of js animation testing
-function slider(){
-    const headerimage = document.querySelector(".headerimage");
-    const slider = document.querySelector(".slider");
-    const logo = document.querySelector("#logo");
-// const logo2 = document.querySelector("#logo2");
-    const headline = document.querySelector(".headline");
-
-    const tl = new TimelineMax();
-
-    tl.fromTo(headerimage, 3, {height: "0%"}, {height: "90%", ease: Power1.easeInOut})
-        .fromTo(
-            headerimage,
-            1.2,
-            {width: "100%"},
-            {width: "80%", ease: Power1.easeInOut}
-        )
-
-        .fromTo(
-            slider,
-            1.2,
-            {x: "-100%"},
-            {x: "0%", ease: Power1.easeInOut},
-            "-=1.2"
-        )
-
-        .fromTo(logo, 0.9, {opacity: 0, x: 30}, {opacity: 5, x: 0}, "-=0.15")
-        // .fromTo(logo2, 0.8, { opacity: 0, x: 30 }, { opacity: 5, x: 0 }, "-=0.15")
-        .fromTo(headline, 0.7, {opacity: 0, x: 30}, {opacity: 5, x: 0}, "-=0.15");
-//end of js animation header testing
-}
-setTimeout( function(){
-    slider();
-}, 22000);
-
-
-// Grab the nav element
-  const nav = document.querySelector('#main-nav');
-// Set nav distance from top of screen to a variable
-  let topOfNav = nav.offsetTop;
-
-// Function that will change settings once nav reaches top of scree
-  function fixNav() {
-    if (window.scrollY >= topOfNav) {
-      document.body.style.paddingTop = (nav.offsetHeight + 40) + 'px';
-      document.body.classList.add('fixed-nav');
-    } else {
-      document.body.classList.remove('fixed-nav');
-      document.body.style.paddingTop = 0;
-    }
-  }
-
-// monitors when screen is scrolled
-  window.addEventListener('scroll', fixNav);
-
 // });
-
-//
-// $(document).delay(3000).queue( function () {
-//   $('.fin').css('background-image', 'url("img/newhope.jpeg")');
-//   $('.sw').css('background-image', 'url("img/newhope.jpeg")');
-// });
-
-setTimeout( ()=>{
-  $("video").fadeOut("slow");
-},22000);
-
