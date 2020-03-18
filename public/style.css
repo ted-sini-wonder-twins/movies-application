@@ -8,9 +8,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: black;
-    /*background-size: 25%;*/
-    /*animation: gif-change 11s ease-in;*/
-    /*animation-iteration-count: infinite;*/
 }
 
 /*this is start of js animation header test*/
@@ -34,7 +31,7 @@ header nav {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to left, #f7635c, #edda5c);
+    background: linear-gradient(to left, #db0909, #0f27ff);
     z-index: -1;
 }
 
@@ -115,7 +112,7 @@ header > section{
     z-index: 2;
     -webkit-animation: flicker 3s linear both;
     animation: flicker 3s linear both;
-    animation-delay: 4.5s;
+    animation-delay: 22s;
     animation-iteration-count: 1;
 }
 
