@@ -255,5 +255,5 @@ let createCards = (movies) => {
 
 setTimeout( ()=>{
   $("video").fadeOut("slow");
-},22000);
+},92000);
 
