@@ -25,9 +25,15 @@ $('.headerimage').delay(7110).queue( function () {
 });
 
 
+//first lightsaber
+ $('.text-center').mouseenter( function () {
+      $('#green-saber').css('display','block');
+  });
 
-
-
+//second lightsaber
+$('.text-center').mouseenter( function () {
+    $('#red-saber').css('display','block');
+});
 
 // Function to create HTML
   function createCard(title, rating, img, id) {
