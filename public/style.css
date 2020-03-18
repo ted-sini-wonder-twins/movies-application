@@ -10,6 +10,26 @@ body {
     background-color: black;
 }
 
+/* When body has fixed-nav class */
+body.fixed-nav nav#main-nav {
+    position: fixed;
+    box-shadow: 0 5px 0 rgba(0,0,0,0.1);
+}
+
+
+
+/* CSS for the Video */
+video{
+    z-index: 3;
+    top: 0;
+    object-fit: cover;
+}
+
+
+
+/**/
+/*** Header Animation  ***/
+/**/
 /*this is start of js animation header test*/
 * {
     margin: 0;
@@ -19,20 +39,6 @@ body {
 
 header {
     height: 100vh;
-}
-
-header nav {
-
-}
-
-.slider{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(to left, #db0909, #0f27ff);
-    z-index: -1;
 }
 
 header > nav{
@@ -116,7 +122,29 @@ header > section{
     animation-iteration-count: 1;
 }
 
-/*start of flicker animation*/
+.headerimage::after{
+    content: "";
+    background: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.3;
+}
+
+.slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to left, #db0909, #0f27ff);
+    z-index: -1;
+}
+/* this is end of js animation header */
+
+/* start of flicker animation */
 @-webkit-keyframes flicker {
     0% {
         opacity: 0;
@@ -307,22 +335,9 @@ header > section{
         opacity: 1; color: #ffb829;
     }
 }
-/*end of flicker animation --*/
+/* end of flicker animation -- */
 
-.headerimage::after{
-    content: "";
-    background: black;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0.3;
-}
-/*this is end of js animation header*/
-
-
-/*css for navbar*/
+/* css for navbar (in header) */
 .navbar {
     animation: background-color 11s ease-in-out;
     animation-iteration-count: infinite;
@@ -349,31 +364,10 @@ header > section{
         background-color: #000;
     }
 }
-/*css for navbar text*/
+
+/* css for navbar text (in header) */
 .text-center {
     font-family: 'Limelight', cursive;
-}
-
-/*hover effect for wanna add*/
-a.btn:hover {
-    color: #be9dc2;
-    /*cursor: pointer;*/
-}
-
-/*hover effect for looking for something*/
-li.text-center.m-auto {
-    color: #be9dc2;
-    /*cursor: pointer;*/
-}
-
-.text-center:hover {
-    cursor: pointer;
-}
-/*start of social media icons*/
-i {
-    cursor: pointer;
-    font-size: 3em;
-    margin: auto;
 }
 
 @keyframes gif-change {
@@ -395,7 +389,67 @@ i {
 }
 /*this is end of background gif/loading css*/
 
-/*this is where bounce animation for buttons starts*/
+
+
+/**/
+/*** Nav Bar CSS ***/
+/**/
+/* Sizing for logo in NavBar*/
+ul img{
+    height: 90px;
+}
+
+/* Font color in navbar */
+ul a{
+    color: white;
+}
+
+/* Css for logo and for it to be hidden */
+li.logo {
+    max-width: 0;
+    overflow: hidden;
+    background: white;
+    transition: all 0.5s;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+/* Css for nav logo when .fixed-nav is active */
+.fixed-nav li.logo {
+    max-width: 500px;
+}
+
+/* Nav bar css */
+#main-nav{
+    color: white;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* hover effect for wanna add */
+a.btn:hover {
+    color: #be9dc2;
+    /*cursor: pointer;*/
+}
+
+/* hover effect for looking for something */
+li.text-center.m-auto {
+    color: #be9dc2;
+    /*cursor: pointer;*/
+}
+
+/* Hover for text-center class */
+.text-center:hover {
+    cursor: pointer;
+}
+
+/* Font size for buttons in cards */
+a.badge-pill {
+    font-size: 1.5em;
+}
+
+/* Animation on hover for buttons in cards */
 a.badge-pill.badge-primary:hover {
     animation: bounce .85s ease-out;
 }
@@ -414,103 +468,6 @@ a.badge-pill.badge-primary:hover {
         -webkit-transform: translateY(-5px);
         transform: translateY(-5px); background-color: #1465d9;
     }
-}
-
-
-
-/*this is where bounce animation for buttons starts*/
-a.badge-pill {
-    font-size: 1.5em;
-}
-
-
-
-/* Cards CSS */
-/* Height and width of the overall card */
-.card{
-    width: 250px;
-    height: 375px;
-    /* added the 3d illusion */
-    perspective: 1000px;
-}
-
-/* Container to hold the "cards" and do the flip */
-.flip{
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
-
-/* On hover have the cards flip */
-.card:hover .flip{
-    transform: rotateY(180deg);
-}
-
-/* Positions the front and back of the cards on top of each other */
-.front, .back{
-    backface-visibility: hidden;
-}
-
-/* Place styling for front card in-case of no image */
-.front{
-    background-image: url("img/coming-soon.png");
-}
-
-/* Styling for back of card */
-.back{
-    transform: rotateY(180deg);
-    background-color: #ffb829;
-}
-
-/* Styling class to enlarge the icons in the cards */
-.cLink {
-    font-size: 1.5em;
-}
-
-/* Sizing for logo in NavBar*/
-ul img{
-    height: 90px;
-}
-
-ul a{
-    color: white;
-}
-
-li.logo {
-    max-width: 0;
-    overflow: hidden;
-    background: white;
-    transition: all 0.5s;
-    font-weight: 600;
-    font-size: 30px;
-}
-
-body.fixed-nav nav#main-nav {
-    position: fixed;
-    box-shadow: 0 5px 0 rgba(0,0,0,0.1);
-}
-
-.fixed-nav li.logo {
-    max-width: 500px;
-}
-
-#main-nav{
-    color: white;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-}
-
-#movie-area{
-    transform: scale(0.98);
-    transition: transform 0.5s;
-    background-image: url("img/death-star.gif");
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-
-.hide {
-    visibility: hidden;
 }
 
 /*first lightsaber hilt*/
@@ -660,13 +617,65 @@ body.fixed-nav nav#main-nav {
     }
 }
 
-video{
-    z-index: 3;
-    top: 0;
-    object-fit: cover;
+
+
+/* Movie area css*/
+#movie-area{
+    transform: scale(0.98);
+    transition: transform 0.5s;
+    background-image: url("img/death-star.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
+/**/
+/*** Cards CSS ***/
+/**/
+/* Height and width of the overall card */
+.card{
+    width: 250px;
+    height: 375px;
+    /* added the 3d illusion */
+    perspective: 1000px;
+}
+
+/* Container to hold the "cards" and do the flip */
+.flip{
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* On hover have the cards flip */
+.card:hover .flip{
+    transform: rotateY(180deg);
+}
+
+/* Positions the front and back of the cards on top of each other */
+.front, .back{
+    backface-visibility: hidden;
+}
+
+/* Place styling for front card in-case of no image */
+.front{
+    background-image: url("img/coming-soon.png");
+}
+
+/* Styling for back of card */
+.back{
+    transform: rotateY(180deg);
+    background-color: #ffb829;
+}
+
+/* Styling class to enlarge the icons in the cards */
+.cLink {
+    font-size: 1.5em;
 }
 
 /*this is for card poster images*/
 .card img {
     object-fit: fill;
 }
+
+
