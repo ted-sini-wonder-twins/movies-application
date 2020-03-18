@@ -13,8 +13,8 @@ module.exports = {
     })
         .then(response => response.json());
   },
-  postMovies: (title,rating) => {
-    let newMovie = {title: title, rating: rating, img:"img/coming-soon.png"};
+  postMovies: (title,rating,genre) => {
+    let newMovie = {title: title, rating: rating, genre: genre, img:"img/coming-soon.png"};
     return fetch('/api/movies',{
       method: 'Post',
       headers: {
