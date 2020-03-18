@@ -356,22 +356,24 @@ header > section{
 }
 @keyframes background-color {
     0% {
-        background-color: #8d2999;
+        background-color: #000;
+        /*#8d2999*/
     }
     20%{
-        background-color: #361446;
+        background-color: #000;
     }
     40%{
-        background-color: #ec186c;
-    }
-    60%{
-        background-color: #403bef;
-    }
-    80%{
         background-color: #361446;
     }
+    60%{
+        background-color: #361446;
+    }
+    80%{
+        background-color: #000;
+        /*361446*/
+    }
     100%{
-        background-color: #8d2999;
+        background-color: #000;
     }
 }
 /*css for navbar text*/
@@ -381,6 +383,7 @@ header > section{
 
 .text-center:hover {
     color: #be9dc2;
+    cursor: pointer;
 }
 /*start of social media icons*/
 i {
@@ -536,3 +539,149 @@ body.fixed-nav nav {
     visibility: hidden;
 }
 
+/*first lightsaber hilt*/
+#ls-hilt1 {
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    background: silver;
+    border-top-left-radius: 3.75px;
+    border-bottom-right-radius: 3.75px;
+    border-bottom-left-radius: 3.75px;
+    margin-top: 5%;
+    margin-left: 20%;
+}
+
+/*second lightsaber hilt*/
+#ls-hilt2 {
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    background: silver;
+    border-top-left-radius: 3.75px;
+    border-bottom-right-radius: 3.75px;
+    border-bottom-left-radius: 3.75px;
+    margin-top: 5%;
+    margin-left: 66.5%;
+}
+
+.hilt-part1 {
+    position: absolute;
+    height: 6px;
+    width: 7.5px;
+    background: #898a88;
+    border: .5px solid grey;
+    left: 6.25px;
+    border-radius: 1px;
+    top: -.5px;
+}
+.hilt-part1:nth-child(2){
+    position: absolute;
+    left: 3.125px;
+    border-top-right-radius: 3px;
+}
+.hilt-part1:nth-child(3){
+    position: absolute;
+    left: 18.75px;
+}
+.hilt-part1:nth-child(4){
+    position: absolute;
+    left: 25px;
+}
+
+.hilt-part2 {
+    position: absolute;
+    height: 4.5px;
+    width: 2.75px;
+    background: silver;
+    border: .25px solid darkgrey;
+    left: 32.5px;
+    top: .5px;
+}
+
+.hilt-part3 {
+    position: absolute;
+    height: 4.5px;
+    width: 1.75px;
+    background: silver;
+    border: .25px solid darkgrey;
+    left: 26.25px;
+    top: .5px;
+}
+
+.hilt-part4 {
+    position: absolute;
+    height: 4.5px;
+    width: 1.75px;
+    background: silver;
+    border: .25px solid darkgrey;
+    left: 37.25px;
+    top: .5px;
+}
+
+.hilt-part5 {
+    position: absolute;
+    height: 4.5px;
+    width: .75px;
+    background: silver;
+    border: .25px solid darkgrey;
+    left: 42.5px;
+}
+
+.ls-button {
+    position: absolute;
+    margin-top: 1.25px;
+    background: goldenrod;
+    height: 2.5px;
+    width: 2.5px;
+    border-radius: 50%;
+    left: 38.75px;
+    border: .35px yellow;
+    cursor: pointer;
+}
+
+/*green saber animation*/
+#green-saber {
+    position: absolute;
+    left: 49px;
+    height: 5px;
+    width: 160px;
+    background: #18d115;
+    border-top-right-radius: 6.25px;
+    border-bottom-right-radius: 6.25px;
+    animation: lightsaber-power 1s;
+    animation-iteration-count: 1;
+    filter: blur(2px);
+    display: none;
+}
+@keyframes lightsaber-power {
+    0% {
+        width: 0px;
+    }
+    100%{
+        width: 160px;
+    }
+}
+
+/*red saber animation*/
+#red-saber {
+    position: absolute;
+    left: 49px;
+    height: 5px;
+    width: 160px;
+    background: #ff2121;
+    border-top-right-radius: 6.25px;
+    border-bottom-right-radius: 6.25px;
+    animation: lightsaber-power 1s;
+    animation-iteration-count: 1;
+    filter: blur(2px);
+    display: none;
+}
+@keyframes lightsaber-power {
+    0% {
+        width: 0px;
+    }
+    100%{
+        width: 160px;
+    }
+}
