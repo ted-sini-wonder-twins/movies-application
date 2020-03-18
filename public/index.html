@@ -33,11 +33,6 @@
 
 <!--    navbar begins here-->
 <nav class="navbar navbar-light bg-dark p-0" id="main-nav">
-<!--    <i class="fab fa-github"></i>-->
-<!--    <i class="fab fa-instagram"></i>-->
-<!--    <i class="fab fa-facebook"></i>-->
-<!--    <i class="fab fa-youtube"></i>-->
-<!--    <i class="fab fa-twitter-square"></i>-->
     <ul class="m-0 p-0 w-100 list-unstyled d-flex">
         <li class="logo text-center">
             <a href="#">
@@ -45,7 +40,7 @@
             </a>
         </li>
         <!-- Click to open Modal to add movie -->
-        <li class=" text-center m-auto"><a type="button" class="btn" data-toggle="modal" data-target="#customMovie">Wanna Add?</a></li>
+        <li class=" text-center m-auto"><a type="button" class="btn" data-toggle="modal" data-target="#customMovie" id="WA">Wanna Add?</a></li>
 
 <!--        first lightsaber-->
         <div id="ls-hilt1">
@@ -58,10 +53,10 @@
             <div class="hilt-part4"></div>
             <div class="ls-button"></div>
             <div class="hilt-part5"></div>
-            <div id="green-saber"></div>
+            <div id="green-crystal" class="saber"></div>
         </div>
 
-        <li class=" text-center m-auto">Looking for Something?</li>
+        <li class=" text-center m-auto" id="LfS">Looking for Something?</li>
 
 <!--        second lightsaber-->
         <div id="ls-hilt2">
@@ -74,7 +69,7 @@
             <div class="hilt-part4"></div>
             <div class="ls-button"></div>
             <div class="hilt-part5"></div>
-            <div id="red-saber"></div>
+            <div id="red-crystal" class="saber"></div>
         </div>
 
     </ul>
