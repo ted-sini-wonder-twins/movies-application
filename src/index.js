@@ -27,9 +27,10 @@ window.addEventListener('scroll', fixNav);
 // Variable for when user edits
 let userTitle = '';
 let userRating = '';
+let userGenre = '';
 
 // Function to create HTML
-function createCard(title, rating, img, id) {
+function createCard(title, rating, img, genre, id) {
     // Variable for empty string
     var html = "";
     // Push all elements of the card to the string
@@ -42,9 +43,10 @@ function createCard(title, rating, img, id) {
          <div class="back position-absolute w-100 h-100 d-flex flex-column justify-content-center align-items-center">
             <h5 class="editable" id="new-user-title">${title}</h5>
             <h5>Rating:<span class="editable" id="new-user-rating">${rating}</span></h5>
+            <h5>Genre:<span class="editable" id="new-user-genre">${genre}</span></h5>
             <div class="d-flex mt-5 w-100 justify-content-around">
-                <i class="fas fa-edit cLink" id="${id}-edit"></i>
-                <i class="far fa-trash-alt cLink" id="${id}-delete"></i>
+                <i class="fas fa-edit cLink" id="${id}-edit" style="cursor: pointer"></i>
+                <i class="far fa-trash-alt cLink" id="${id}-delete" style="cursor: pointer"></i>
             </div>
          </div>
      </div>
@@ -57,11 +59,11 @@ function createCard(title, rating, img, id) {
 
 // Function for creating cards and adding event listeners to icons on cards
 let createCards = (movies) => {
-    movies.forEach(({title, rating, img, id}) => {
+    movies.forEach(({title, rating, img, genre, id}) => {
         // Console log for debugging
         // console.log(`id#${id} - ${title} - rating: ${rating} - img: ${img}`);
         // Added cards to div / creates cards using movie info
-        $("#movie-area").append(createCard(title, rating, img, id));
+        $("#movie-area").append(createCard(title, rating, img, genre, id));
 
     });
 
@@ -95,6 +97,7 @@ let createCards = (movies) => {
         // console.log(editID);
         let editTitle;
         let editRating;
+        let editGenre;
         // Turn title and rating into editable fields and turn background white for visual cue
         $('.editable').attr('contentEditable', 'true').css('background-color','white');
 
@@ -105,15 +108,17 @@ let createCards = (movies) => {
         $($("#user-update").click( (u)=>{
             editTitle = $(u.target).parent().children(":nth-child(2)").text();
             editRating = $(u.target).parent().children(":nth-child(3)").children()[0].innerHTML;
+            editGenre = $(u.target).parent().children(":nth-child(4)").children()[0].innerHTML;
             // console.log(editTitle);
             // console.log(editRating);
+            console.log(editGenre);
 
             // Remove Update button and make content non-editable
             $(u.target).remove();
             $(".editable").removeAttr('contentEditable').css("background-color","none");
 
             // Place edit movie info into an object
-            let editedMovie = {title:editTitle,rating:editRating};
+            let editedMovie = {title:editTitle,rating:editRating,genre:editGenre};
             // console.log(editedMovie);
 
             // Run function to retrieve movie by id and modify content based on new info

@@ -430,18 +430,18 @@ li.logo {
 /* hover effect for wanna add */
 a.btn:hover {
     color: #be9dc2;
-    /*cursor: pointer;*/
+    cursor: pointer;
 }
 
 /* hover effect for looking for something */
 li.text-center.m-auto {
     color: #be9dc2;
-    /*cursor: pointer;*/
+    cursor: pointer;
 }
 
 /* Hover for text-center class */
 .text-center:hover {
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 
 /* Font size for buttons in cards */
@@ -589,7 +589,7 @@ a.badge-pill.badge-primary:hover {
     width: 160px;
     border-top-right-radius: 6.25px;
     border-bottom-right-radius: 6.25px;
-    /*animation: lightsaber-power-on 1s;*/
+    animation: lightsaber-power-on 1s;
     animation-iteration-count: 1;
     filter: blur(2px);
     display: none;

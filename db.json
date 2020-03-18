@@ -4,290 +4,337 @@
       "title": "Casablanca",
       "rating": "4",
       "img": "img/casablancaposter.jpg",
-      "id": 1
+      "id": 1,
+      "genre": "Romance"
     },
     {
       "title": "Star Wars: A New Hope",
       "rating": "5",
       "img": "img/anhMoviePoster.jpg",
-      "id": 2
+      "id": 2,
+      "genre": "Sci-fi"
     },
     {
       "title": "Star Wars: Empire Strikes Back",
       "rating": "5",
       "img": "img/esbMoviePoster.jpg",
-      "id": 3
+      "id": 3,
+      "genre": "Sci-fi"
     },
     {
       "title": "Star Wars: Return of the Jedi",
       "rating": "5",
       "img": "img/rotjMoviePoster.jpg",
-      "id": 4
+      "id": 4,
+      "genre": "Sci-fi"
     },
     {
       "title": "The Shining",
       "rating": "5",
       "img": "img/firstShining.jpg",
-      "id": 5
+      "id": 5,
+      "genre": "Horror"
     },
     {
       "title": "Shawshank Redemption",
       "rating": "5",
       "img": "img/shawshank.jpg",
-      "id": 6
+      "id": 6,
+      "genre": "Drama"
     },
     {
       "title": "The Matrix",
       "rating": "5",
       "img": "img/matrix.jpg",
-      "id": 7
+      "id": 7,
+      "genre": "Action"
     },
     {
       "title": "Pulp Fiction",
       "rating": "4",
       "img": "img/pulp.jpg",
-      "id": 8
+      "id": 8,
+      "genre": "Drama"
     },
     {
       "title": "28 Days Later",
       "rating": "4",
       "img": "img/28days.jpg",
-      "id": 9
+      "id": 9,
+      "genre": "Indie"
     },
     {
       "title": "Star Wars: The Phantom Menace",
       "rating": "5",
       "img": "img/phantom.jpg",
-      "id": 10
+      "id": 10,
+      "genre": "Sci-fi"
     },
     {
       "title": "Star Wars: Attack of the Clones",
       "rating": "4",
       "img": "img/clones.jpg",
-      "id": 11
+      "id": 11,
+      "genre": "Sci-fi"
     },
     {
       "title": "Star Wars: Revenge of the Sith",
       "rating": "5",
       "img": "img/revenge.jpg",
-      "id": 12
+      "id": 12,
+      "genre": "Sci-fi"
     },
     {
       "title": "Snatch",
       "rating": "5",
       "img": "img/snatch.jpg",
-      "id": 13
+      "id": 13,
+      "genre": "Heist"
     },
     {
       "title": "Fast Times at Richmond High",
       "rating": "4",
       "img": "img/fasttimes.jpg",
-      "id": 14
+      "id": 14,
+      "genre": "Comedy"
     },
     {
       "title": "The Dark Knight",
       "rating": "5",
       "img": "img/darkknight.jpg",
-      "id": 15
+      "id": 15,
+      "genre": "Action"
     },
     {
       "title": "Shaun of the Dead",
       "rating": "5",
       "img": "img/shaun.jpg",
-      "id": 16
+      "id": 16,
+      "genre": "Comedy"
     },
     {
       "title": "The Godfather",
       "rating": "5",
       "img": "img/godfather.jpg",
-      "id": 17
+      "id": 17,
+      "genre": "Drama"
     },
     {
       "title": "Raiders of the Lost Ark",
       "rating": "4",
       "img": "img/raiders.jpg",
-      "id": 18
+      "id": 18,
+      "genre": "Adventure"
     },
     {
       "title": "2001: A Space Odyssey",
       "rating": "5",
       "img": "img/odyssey.jpg",
-      "id": 19
+      "id": 19,
+      "genre": "Sci-fi"
     },
     {
       "title": "Taxi Driver",
       "rating": "5",
       "img": "img/taxidriver.jpg",
-      "id": 20
+      "id": 20,
+      "genre": "Drama"
     },
     {
       "title": "Back to the Future",
       "rating": "4",
       "img": "img/backtofuture.jpg",
-      "id": 21
+      "id": 21,
+      "genre": "Adventure"
     },
     {
       "title": "Braveheart",
       "rating": "5",
       "img": "img/braveheart.jpg",
-      "id": 22
+      "id": 22,
+      "genre": "Action"
     },
     {
       "title": "The Silence of the Lambs",
       "rating": "4",
       "img": "img/silence.jpg",
-      "id": 23
+      "id": 23,
+      "genre": "Horror"
     },
     {
       "title": "Apocalypse Now",
       "rating": "4",
       "img": "img/apocalypse.jpg",
-      "id": 24
+      "id": 24,
+      "genre": "Drama"
     },
     {
       "title": "Avatar",
       "rating": "4",
       "img": "img/avatar.jpg",
-      "id": 25
+      "id": 25,
+      "genre": "Sci-fi"
     },
     {
       "title": "Good Will Hunting",
       "rating": "5",
       "img": "img/goodwill.jpg",
-      "id": 26
+      "id": 26,
+      "genre": "Drama"
     },
     {
       "title": "Rock 'n' Rolla",
       "rating": "4",
       "img": "img/rocknrolla.jpg",
-      "id": 27
+      "id": 27,
+      "Genre": "Heist"
     },
     {
       "title": "The Big Lebowski",
       "rating": "4",
       "img": "img/biglebowski.jpg",
-      "id": 28
+      "id": 28,
+      "genre": "Comedy"
     },
     {
       "title": "The Breakfast Club",
       "rating": "4",
       "img": "img/breakfastclub.jpg",
-      "id": 29
+      "id": 29,
+      "genre": "Drama"
     },
     {
       "title": "Deadpool",
       "rating": "4",
       "img": "img/deadpool.jpg",
-      "id": 30
+      "id": 30,
+      "genre": "Action"
     },
     {
       "title": "Scott Pilgrim vs. The World",
       "rating": "4",
       "img": "img/scottpilgrim.jpg",
-      "id": 31
+      "id": 31,
+      "genre": "Action"
     },
     {
       "title": "Rocky Horror Picture Show",
       "rating": "4",
       "img": "img/rocky.jpg",
-      "id": 32
+      "id": 32,
+      "genre": "Comedy"
     },
     {
       "title": "Labyrinth",
       "rating": "5",
       "img": "img/labyrinth.jpg",
-      "id": 33
+      "id": 33,
+      "genre": "Fantasy"
     },
     {
       "title": "Willow",
       "rating": "4",
       "img": "img/willow.jpg",
-      "id": 34
+      "id": 34,
+      "genre": "Fantasy"
     },
     {
       "title": "Ready Player One",
       "rating": "5",
       "img": "img/readyplayerone.jpg",
-      "id": 35
+      "id": 35,
+      "genre": "Adventure"
     },
     {
       "title": "Logan",
       "rating": "5",
       "img": "img/logan.jpg",
-      "id": 36
+      "id": 36,
+      "genre": "Action"
     },
     {
       "title": "Jaws",
       "rating": "5",
       "img": "img/jaws.jpg",
-      "id": 37
+      "id": 37,
+      "genre": "Thriller"
     },
     {
       "title": "Dark Knight Rises",
       "rating": "5",
       "img": "img/dkrises.jpg",
-      "id": 38
+      "id": 38,
+      "genre": "Action"
     },
     {
       "title": "Scarface",
       "rating": "5",
       "img": "img/scarface.jpg",
-      "id": 39
+      "id": 39,
+      "genre": "Drama"
     },
     {
       "title": "The Exorcist",
       "rating": "4",
       "img": "img/exorcist.jpg",
-      "id": 40
+      "id": 40,
+      "genre": "Horror"
     },
     {
       "title": "Joker",
       "rating": "5",
       "img": "img/joker.jpg",
-      "id": 41
+      "id": 41,
+      "genre": "Drama"
     },
     {
       "title": "Rogue One",
       "rating": "5",
       "img": "img/rogueone.jpg",
-      "id": 42
+      "id": 42,
+      "genre": "Sci-fi"
     },
     {
       "title": "Stepbrothers",
       "rating": "4",
       "img": "img/stepbrothers.jpg",
-      "id": 43
+      "id": 43,
+      "genre": "Comedy"
     },
     {
       "title": "Star Wars: The Force Awakens",
       "rating": "5",
       "img": "img/awakens.jpg",
-      "id": 44
+      "id": 44,
+      "genre": "Sci-fi"
     },
     {
       "title": "Star Wars: The Last Jedi",
       "rating": "4",
       "img": "img/lastjedi.jpg",
-      "id": 45
+      "id": 45,
+      "genre": "Sci-fi"
     },
     {
       "title": "Star Wars: Rise of Skywalker",
       "rating": "4",
       "img": "img/rise.jpg",
-      "id": 46
+      "id": 46,
+      "genre": "Sci-fi"
     },
     {
       "title": "Zoolander",
       "rating": "5",
       "img": "img/zoolander.jpg",
-      "id": 47
+      "id": 47,
+      "genre": "Comedy"
     },
     {
       "title": "Goodfellas",
       "rating": "5",
       "img": "img/goodfellas.jpg",
-      "id": 48
+      "id": 48,
+      "genre": "Drama"
     }
-
   ]
 }
