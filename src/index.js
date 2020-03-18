@@ -253,3 +253,7 @@ let createCards = (movies) => {
 //   $('.sw').css('background-image', 'url("img/newhope.jpeg")');
 // });
 
+setTimeout( ()=>{
+  $("video").fadeOut("slow");
+},22000);
+
