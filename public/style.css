@@ -13,6 +13,9 @@ header {
     height: 100vh;
 }
 
+header nav {
+
+}
 /*.sw {*/
 /*    width: 100%;*/
 /*    height: 100%;*/
@@ -521,7 +524,7 @@ li.logo {
     font-size: 30px;
 }
 
-body.fixed-nav nav {
+body.fixed-nav nav#main-nav {
     position: fixed;
     box-shadow: 0 5px 0 rgba(0,0,0,0.1);
 }
