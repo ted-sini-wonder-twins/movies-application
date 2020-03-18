@@ -470,7 +470,7 @@ a.badge-pill.badge-primary:hover {
     }
 }
 
-/*first lightsaber hilt*/
+/* first lightsaber hilt */
 #ls-hilt1 {
     position: absolute;
     width: 50px;
@@ -483,7 +483,7 @@ a.badge-pill.badge-primary:hover {
     margin-left: 20%;
 }
 
-/*second lightsaber hilt*/
+/* second lightsaber hilt */
 #ls-hilt2 {
     position: absolute;
     width: 50px;
@@ -571,49 +571,45 @@ a.badge-pill.badge-primary:hover {
     cursor: pointer;
 }
 
-/*green saber animation*/
-#green-saber {
-    position: absolute;
-    left: 49px;
-    height: 5px;
-    width: 160px;
+/* green saber animation */
+#green-crystal {
     background: #18d115;
-    border-top-right-radius: 6.25px;
-    border-bottom-right-radius: 6.25px;
-    animation: lightsaber-power 1s;
-    animation-iteration-count: 1;
-    filter: blur(2px);
-    display: none;
-}
-@keyframes lightsaber-power {
-    0% {
-        width: 0px;
-    }
-    100%{
-        width: 160px;
-    }
 }
 
-/*red saber animation*/
-#red-saber {
+/* red saber animation */
+#red-crystal {
+    background: #ff2121;
+}
+
+/* Saber class */
+.saber{
     position: absolute;
     left: 49px;
     height: 5px;
     width: 160px;
-    background: #ff2121;
     border-top-right-radius: 6.25px;
     border-bottom-right-radius: 6.25px;
-    animation: lightsaber-power 1s;
+    /*animation: lightsaber-power-on 1s;*/
     animation-iteration-count: 1;
     filter: blur(2px);
     display: none;
 }
-@keyframes lightsaber-power {
+
+/* Key frames for "on" and "off" beams */
+@keyframes lightsaber-power-on {
     0% {
         width: 0px;
     }
     100%{
         width: 160px;
+    }
+}
+@keyframes lightsaber-power-off {
+    0% {
+        width: 160px;
+    }
+    100%{
+        width: 0px;
     }
 }
 

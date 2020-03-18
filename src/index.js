@@ -187,14 +187,22 @@ $('.headerimage').delay(24000).queue( function () {
 });
 
 //first lightsaber
- $('.text-center').mouseenter( function () {
-      $('#green-saber').css('display','block');
-  });
+ $('#WA').hover( function () {
+      $('#green-crystal').css({
+          'display':'block',
+          'animation:': 'lightsaber-power-on'});
+  },(function () {
+      $('#green-crystal').css('animation:', 'lightsaber-power-off').css("display", "none");
+ }));
 
 //second lightsaber
-$('.text-center').mouseenter( function () {
-    $('#red-saber').css('display','block');
-});
+$('#LfS').hover( function () {
+    $('#red-crystal').css({
+        'display':'block',
+        'animation:': 'lightsaber-power-on'});
+},(function () {
+    $('#red-crystal').css('animation:', 'lightsaber-power-off').css("display", "none");
+}));
 
 // When user closes "add movie" modal
 $("#closeBtn").click(() => {
