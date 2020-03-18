@@ -239,6 +239,54 @@
       "rating": "4",
       "img": "img/exorcist.jpg",
       "id": 40
+    },
+    {
+      "title": "Joker",
+      "rating": "5",
+      "img": "img/joker.jpg",
+      "id": 41
+    },
+    {
+      "title": "Rogue One",
+      "rating": "5",
+      "img": "img/rogueone.jpg",
+      "id": 42
+    },
+    {
+      "title": "Stepbrothers",
+      "rating": "4",
+      "img": "img/stepbrothers.jpg",
+      "id": 43
+    },
+    {
+      "title": "Star Wars: The Force Awakens",
+      "rating": "5",
+      "img": "img/awakens.jpg",
+      "id": 44
+    },
+    {
+      "title": "Star Wars: The Last Jedi",
+      "rating": "4",
+      "img": "img/lastjedi.jpg",
+      "id": 45
+    },
+    {
+      "title": "Star Wars: Rise of Skywalker",
+      "rating": "4",
+      "img": "img/rise.jpg",
+      "id": 46
+    },
+    {
+      "title": "Zoolander",
+      "rating": "5",
+      "img": "img/zoolander.jpg",
+      "id": 47
+    },
+    {
+      "title": "Goodfellas",
+      "rating": "5",
+      "img": "img/goodfellas.jpg",
+      "id": 48
     }
 
   ]

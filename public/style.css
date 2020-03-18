@@ -381,8 +381,19 @@ header > section{
     font-family: 'Limelight', cursive;
 }
 
-.text-center:hover {
+/*hover effect for wanna add*/
+a.btn:hover {
     color: #be9dc2;
+    /*cursor: pointer;*/
+}
+
+/*hover effect for looking for something*/
+li.text-center.m-auto {
+    color: #be9dc2;
+    /*cursor: pointer;*/
+}
+
+.text-center:hover {
     cursor: pointer;
 }
 /*start of social media icons*/
