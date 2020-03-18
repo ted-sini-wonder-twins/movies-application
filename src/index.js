@@ -13,7 +13,8 @@ sayHello('Connected to Main');
  * require style imports
  */
 const {getMovies, deleteMovies, editMovies, postMovies} = require('./api.js');
-// $(document).ready( () => {
+
+$(document).ready( () => {
 
 
 // Grab the nav element
@@ -281,4 +282,4 @@ function fixNav() {
 //
 // document.getElementById("movie-input").addEventListener("keyup", searchMovies);
 
-// });
+});
