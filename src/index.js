@@ -18,7 +18,7 @@ const {getMovies, deleteMovies, edi5tMovies, postMovies} = require('./api.js');
 let userTitle = '';
 let userRating = '';
 
-$('.headerimage').delay(7110).queue( function () {
+$('.headerimage').delay(24000).queue( function () {
   $('.hope').fadeIn(5000);
   $('.sw').fadeOut(5000);
   $('.fin').fadeOut(5000);
@@ -197,34 +197,40 @@ let createCards = (movies) => {
 
 
 //start of js animation testing
-  const headerimage = document.querySelector(".headerimage");
-  const slider = document.querySelector(".slider");
-  const logo = document.querySelector("#logo");
+function slider(){
+    const headerimage = document.querySelector(".headerimage");
+    const slider = document.querySelector(".slider");
+    const logo = document.querySelector("#logo");
 // const logo2 = document.querySelector("#logo2");
-  const headline = document.querySelector(".headline");
+    const headline = document.querySelector(".headline");
 
-  const tl = new TimelineMax();
+    const tl = new TimelineMax();
 
-  tl.fromTo(headerimage, 3, {height: "0%"}, {height: "90%", ease: Power1.easeInOut})
-      .fromTo(
-          headerimage,
-          1.2,
-          {width: "100%"},
-          {width: "80%", ease: Power1.easeInOut}
-      )
+    tl.fromTo(headerimage, 3, {height: "0%"}, {height: "90%", ease: Power1.easeInOut})
+        .fromTo(
+            headerimage,
+            1.2,
+            {width: "100%"},
+            {width: "80%", ease: Power1.easeInOut}
+        )
 
-      .fromTo(
-          slider,
-          1.2,
-          {x: "-100%"},
-          {x: "0%", ease: Power1.easeInOut},
-          "-=1.2"
-      )
+        .fromTo(
+            slider,
+            1.2,
+            {x: "-100%"},
+            {x: "0%", ease: Power1.easeInOut},
+            "-=1.2"
+        )
 
-      .fromTo(logo, 0.9, {opacity: 0, x: 30}, {opacity: 5, x: 0}, "-=0.15")
-      // .fromTo(logo2, 0.8, { opacity: 0, x: 30 }, { opacity: 5, x: 0 }, "-=0.15")
-      .fromTo(headline, 0.7, {opacity: 0, x: 30}, {opacity: 5, x: 0}, "-=0.15");
+        .fromTo(logo, 0.9, {opacity: 0, x: 30}, {opacity: 5, x: 0}, "-=0.15")
+        // .fromTo(logo2, 0.8, { opacity: 0, x: 30 }, { opacity: 5, x: 0 }, "-=0.15")
+        .fromTo(headline, 0.7, {opacity: 0, x: 30}, {opacity: 5, x: 0}, "-=0.15");
 //end of js animation header testing
+}
+setTimeout( function(){
+    slider();
+}, 22000);
+
 
 // Grab the nav element
   const nav = document.querySelector('#main-nav');
@@ -255,5 +261,5 @@ let createCards = (movies) => {
 
 setTimeout( ()=>{
   $("video").fadeOut("slow");
-},92000);
+},22000);
 
