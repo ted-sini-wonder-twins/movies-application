@@ -685,3 +685,9 @@ body.fixed-nav nav {
         width: 160px;
     }
 }
+
+video{
+    z-index: 3;
+    top: 0;
+    object-fit: cover;
+}
