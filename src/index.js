@@ -13,6 +13,7 @@ sayHello('Connected to Main');
  * require style imports
  */
 const {getMovies, deleteMovies, editMovies, postMovies} = require('./api.js');
+
 // $(document).ready( () => {
 
 
@@ -31,6 +32,8 @@ let userTitle = '';
 let userRating = '';
 let userGenre = '';
 
+// Variable to local storage
+let localMaster;
 
 // Function to create HTML
 function createCard(title, rating, img, genre, id) {
@@ -63,6 +66,8 @@ function createCard(title, rating, img, genre, id) {
 
 // Function for creating cards and adding event listeners to icons on cards
 let createCards = (movies) => {
+    localMaster = movies;
+    console.log(localMaster);
     movies.forEach(({title, rating, img, genre, id}) => {
         // Console log for debugging
         // console.log(`id#${id} - ${title} - rating: ${rating} - img: ${img}`);
@@ -220,14 +225,6 @@ $('#LfS').hover( function () {
 }));
 
 
-// When user closes "add movie" modal
-$("#closeBtn").click(() => {
-    // Clears text fields
-    $("#customTitle").val("");
-    $("#customRating").val("");
-});
-
-
 // Function that will change settings once nav reaches top of scree
 function fixNav() {
     if (window.scrollY >= topOfNav) {
@@ -240,18 +237,29 @@ function fixNav() {
 }
 
 
+// When user closes "add movie" modal
+$(".closeBtn").click(() => {
+    // Clears text fields
+    $("#customTitle").val("");
+    $("#customRating").val("");
+});
+
+
 // When user submits their movie
-  $("#customEntry").click(() => {
+$("#customEntry").click(() => {
     // Take text in title field
     let title = $("#customTitle").val();
     // Take text in rating field
     let rating = $("#customRating").val();
+    // Take text in genre field
+    let genre = $("#customGenre").val();
     // Console logs for debugging
     // console.log(title);
     // console.log(rating);
+    //   console.log(genre);
 
     // Add movie based on info
-    postMovies(title, rating);
+    postMovies(title, rating, genre);
     $('#movie-area').empty();
     getMovies()
         // Create card and add to HTML
@@ -265,6 +273,59 @@ function fixNav() {
     $("#customTitle").val("");
     $("#customRating").val("");
   });
+
+
+// When user closes "search" modal
+$(".closeBtn2").click(() => {
+    // Clears text fields
+    $("#lftMovie").val("");
+
+});
+
+
+// When user searches for movie title
+$("#searchBtn").click(() => {
+   let value = $("#lftMovieTitle").val();
+    if (value === "") {
+        // Input field was empty
+        alert("Please enter a title");
+    } else {
+        console.log(value);
+        $("#lftMovieTitle").val("");
+        $('#lfMovie').modal('hide');
+    }
+});
+
+
+// When user searches for movie rating
+$("#searchBtn2").click(() => {
+    let value = $("#lftMovieRating").val();
+    if (value === "") {
+        // Input field was empty
+        alert("Please enter a Rating");
+    } else if(isNaN(value) || value <= 0 || value >= 6){
+        // Input is not a number
+        alert("Please enter a number between 1 and 5")
+    } else {
+        console.log(value);
+        $("#lftMovieRating").val("");
+        $('#lfMovie').modal('hide');
+    }
+});
+
+
+// When user searches for movie genre
+// $("#searchBtn3").click(() => {
+//     let value = $("#lftMovieTitle").val();
+//     if (value === "") {
+//         // Input field was empty
+//         alert("Please enter a title");
+//     } else {
+//         console.log(value);
+//         $("#lftMovieTitle").val("");
+//         $('#lfMovie').modal('hide');
+//     }
+// });
 
 
 //   function searchMovies(e) {
