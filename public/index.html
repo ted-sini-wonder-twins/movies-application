@@ -56,7 +56,8 @@
             <div id="green-crystal" class="saber"></div>
         </div>
 
-        <li class=" text-center m-auto" id="LfS">Looking for Something?</li>
+        <!-- Click to open Modal to search for a movie -->
+        <li class=" text-center m-auto"><a type="button" class="btn" data-toggle="modal" data-target="#lfMovie" id="LfS">Looking for Something?</a></li>
 
 <!--        second lightsaber-->
         <div id="ls-hilt2">
@@ -112,6 +113,41 @@
                 <button type="button" class="btn btn-danger" data-dismiss="modal" id="closeBtn">Close</button>
             </div>
 
+        </div>
+    </div>
+</div>
+
+<!-- Modal to search for movie -->
+<div class="modal fade" id="lfMovie">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">Tells what your looking for.</div>
+
+            <div class="modal-body">
+
+                <section>
+                    <label for="lftMovieTitle"></label>
+                    <input type="text" name="lftMovieTitle" id="lftMovieTitle">
+                    <button type="button" class="btn btn-secondary" id="searchBtn">Search by Title</button>
+                </section>
+
+                <section>
+                    <label for="lftMovieRating"></label>
+                    <input type="text" name="lftMovieRating" id="lftMovieRating">
+                    <button type="button" class="btn btn-secondary" id="searchBtn2">Search by Rating</button>
+                </section>
+
+                <section>
+                    <label for="lftMovieGenre"></label>
+                    <input type="text" name="lftMovieGenre" id="lftMovieGenre">
+                    <button type="button" class="btn btn-secondary" id="searchBtn3">Search by Genre</button>
+                </section>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="closeBtn2">Close</button>
+            </div>
         </div>
     </div>
 </div>
